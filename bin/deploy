@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
 
+# Clean the branch and delete the folders
+# they are causing an unknown problem
+rm -rf build/
+git push --delete origin gh-pages
+
 # Deploy using Middleman-deploy
 middleman deploy
