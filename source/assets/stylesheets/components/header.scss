@@ -1,0 +1,21 @@
+header{
+  background-color: $purple;
+  @include clearfix;
+
+  ul{
+  	li{
+      float: left; font-size: 1.1em;
+    }
+  }
+  a{color:#fff;
+    &:hover{color:$yellow}
+  }
+
+  &.cvnl{
+  	height: 80px;
+  	.logo{width: 100px;}
+  	ul{
+  		li{line-height: 80px;}
+  	}
+  }
+}

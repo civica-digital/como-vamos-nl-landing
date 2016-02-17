@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'dinnregular';
+  src: url('../fonts/DINNextLTPro-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/DINNextLTPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/DINNextLTPro-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/DINNextLTPro-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/DINNextLTPro-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/DINNextLTPro-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'dinnbold';
+  src: url('../fonts/DINNextLTPro-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/DINNextLTPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/DINNextLTPro-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/DINNextLTPro-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/DINNextLTPro-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/DINNextLTPro-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'dinnlight';
+  src: url('../fonts/DINNextLTPro-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/DINNextLTPro-Light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/DINNextLTPro-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/DINNextLTPro-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/DINNextLTPro-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body {
   color: $base-font-color;
   font-family: $base-font-family;
