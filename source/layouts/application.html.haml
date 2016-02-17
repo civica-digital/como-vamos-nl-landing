@@ -8,6 +8,50 @@
     = stylesheet_link_tag "application"
 
   %body{class: page_classes}
+    %header.cvnl
+      .container
+        .logo.pull-left.m-sm.m-r-md
+          = link_to '#' do
+            = image_tag 'logos/cvnl.png'
+        %ul.pull-left.inline-block
+          %li.m-r-lg= link_to '¿Qué es Cómo Vamos NL?', '#'
+          %li.m-r-lg.text-uppercase= link_to 'Participa', '#', class: 'c_yellow'
+        %ul.pull-right.inline-block
+          %li= link_to 'Conoce más', '#'
+
     = yield
+
+    %footer
+      .container.p-t-xl.p-b-xl.ornament
+        .box.text-center
+          %h3.m-t-md.l-s-s ACERCA DE
+          %ul.m-t-lg
+            %li= link_to 'Qué es Cómo Vamos NL?', '#'
+            %li= link_to 'Socios', '#'
+            %li= link_to 'Línea de tiempo', '#'
+            %li= link_to 'Equipo y Gobernanza', '#'
+        .box.text-center
+          =link_to image_tag('logos/acv-byn.png'), '#', class: 'logo'
+          %ul.m-t-lg
+            %li= link_to 'Las 11 acciones', '#'
+            %li= link_to 'Reuniones con Alcaldes', '#'
+            %li= link_to 'Avances', '#'
+        .box.text-center
+          =link_to image_tag('logos/gcv-byn.png'), '#', class: 'logo'
+          %ul.m-t-lg
+            %li= link_to 'Compromisos y metas', '#'
+            %li= link_to 'Avances', '#'
+        .box.text-center
+          %h3.m-t-md.l-s-s CONTACTO
+          %ul.social.m-t-lg
+            %li.inline= link_to image_tag('icons/facebook.png'), '#'
+            %li.inline= link_to image_tag('icons/twitter.png'), '#'
+            %li.inline= link_to image_tag('icons/youtube.png'), '#'
+            %li.inline= link_to image_tag('icons/flickr.png'), '#'
+      .copyright
+        .container.p-t-md.p-b-md
+          %p.inline-block copyright ...
+          %p.inline-block.pull-right.m-t-sm= link_to 'Aviso Legal', '#', class: 'pull-right'
+
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"

@@ -1,0 +1,47 @@
+footer{
+  background-color: $gray-purple;
+  @include clearfix;
+  color:#fff;
+
+  &:before{
+    height: 9px;
+    background-color: $lime;
+    width: 100%;
+    display: block;
+    content: '';
+  }
+  .ornament{
+    &:before{
+      height: 100px;
+      width: 120px;
+      display: block;
+      content: '';
+      position: absolute;
+      right: 0;
+      top:-60px;
+      z-index: 10;
+      background-size: 120px;
+      background-image: url('/assets/images/icons/footer-ornament.png');
+    }
+  }
+  a{
+    color:#fff;
+    &:hover{color:$yellow;}
+  }
+
+  ul.social{
+    img{width: 30px;}
+  }
+
+  li{line-height: 2em;}
+
+  .logo img{width:100px;}
+
+  .box{
+    @include span-columns(3); @include clearfix;
+  }
+  .copyright{
+    background-color: darken($gray-purple, 10%);
+    p{font-size: .8em;}
+  }
+}
