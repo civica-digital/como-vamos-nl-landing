@@ -2,6 +2,7 @@ footer{
   background-color: $gray-purple;
   @include clearfix;
   color:#fff;
+  margin-top:60px;
 
   &:before{
     height: 9px;
@@ -21,7 +22,7 @@ footer{
       top:-60px;
       z-index: 10;
       background-size: 120px;
-      background-image: url('/assets/images/icons/footer-ornament.png');
+      background-image: url('/assets/images/illustrations/footer-ornament.png');
     }
   }
   a{

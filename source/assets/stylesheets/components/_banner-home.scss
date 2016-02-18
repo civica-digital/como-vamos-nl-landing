@@ -1,0 +1,28 @@
+section.banner{
+  @include clearfix;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  background:  url(/assets/images/illustrations/bg-banner.png) 0 440px repeat-x;
+  background-size: 1px;
+
+  .box{
+
+    width: 49.5%; margin: 0; padding:0;
+
+    a{
+      display:block; height: 490px;
+
+      h2{color: $dark-gray; font-size: 1.6em;}
+      p{color: $dark-gray; font-size: 1.2em;}
+
+      .logo img{width:250px; text-align: center;}
+
+      &:hover{background-color: rgba($dark-gray, .05);}
+    }
+
+  }
+
+  .container{ background: url(/assets/images/illustrations/bg-banner-container.png) top no-repeat;}
+
+}

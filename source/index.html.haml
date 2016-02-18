@@ -4,16 +4,21 @@ title: Cómo Vamos NL?
 
 .home-page
   %section.banner
-    .alcalde
-      =link_to '#' do
-        =image_tag('logos/alcalde.png')
-        %h2 Conoce las acciones
-        %p en las que se están evaluando a los Alcaldes de tu Municipio
-    .gober
-      =link_to '#' do
-        =image_tag('logos/gober.png')
-        %h2 Conoce los compromisos y metas
-        %p para evaluar al Gobernador
+    .container
+      .box.alcalde.text-center.inline-block
+        =link_to '#' do
+          .logo.p-t-xxl
+            =image_tag('logos/acv.png')
+          %h2.m-t-xl Conoce las acciones
+          %p en las que se están evaluando a los Alcaldes de tu Municipio
+      .box.gober.text-center.inline-block
+        =link_to '#' do
+          .logo.p-t-xxl
+            =image_tag('logos/gcv.png')
+          %h2.m-t-xl Conoce los compromisos y metas
+          %p para evaluar al Gobernador
   %section.poll
-    %h1 Participa en: Alcalde, Cómo Vamos NL
-    %p Ayúdanos a saber qué temas te interesan
+    .container.m-t-xxl
+      .text-center
+        %h1 Participa en: Alcalde, Cómo Vamos NL
+        %p Ayúdanos a saber qué temas te interesan
