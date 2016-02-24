@@ -6,6 +6,7 @@
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     %title= current_page.data.title || "The Middleman"
     = stylesheet_link_tag "application"
+    = javascript_include_tag "mixpanel"
 
   %body{class: page_classes}
     %header.cvnl
@@ -53,5 +54,7 @@
           %p.inline-block copyright ...
           %p.inline-block.pull-right.m-t-sm= link_to 'Aviso Legal', '#', class: 'pull-right'
 
+    :javascript
+      mixpanel.track("Page Load");
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"
