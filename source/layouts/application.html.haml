@@ -4,7 +4,7 @@
     %meta{charset: "utf-8"}
     %meta{content: "IE=edge,chrome=1", http: {equiv: "X-UA-Compatible"}}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
-    %title= current_page.data.title || "The Middleman"
+    %title= current_page.data.title || "Cómo Vamos, Nuevo León"
     = stylesheet_link_tag "application"
 
   %body{class: page_classes}
@@ -14,10 +14,7 @@
           = link_to '/' do
             = image_tag 'logos/cvnl.png'
         %ul.pull-left.inline-block
-          %li.m-r-lg= link_to '¿Qué es Cómo Vamos NL?', '/que-es'
-          %li.m-r-lg.text-uppercase= link_to 'Participa', '#', class: 'c_yellow'
-        %ul.pull-right.inline-block
-          %li= link_to 'Conoce más', '#'
+          %li.m-r-lg= link_to '¿Qué es Cómo Vamos, Nuevo León?', '/que-es'
 
     = yield
 
@@ -26,8 +23,8 @@
         .box.text-center
           %h3.m-t-md.l-s-s ACERCA DE
           %ul.m-t-lg
-            %li= link_to '¿Qué es Cómo Vamos NL?', '/que-es'
-            %li= link_to 'Socios', '#'
+            %li= link_to '¿Qué es Cómo Vamos, Nuevo León?', '/que-es'
+            %li= link_to 'Organizaciones', '#'
             %li= link_to 'Línea de tiempo', '#'
             %li= link_to 'Equipo y Gobernanza', '#'
         .box.text-center
@@ -40,18 +37,19 @@
           =link_to image_tag('logos/gcv-byn.png'), '#', class: 'logo'
           %ul.m-t-lg
             %li= link_to 'Compromisos y metas', '#'
+            %li= link_to 'Reuniones con el Gobernador', '#'
             %li= link_to 'Avances', '#'
         .box.text-center
           %h3.m-t-md.l-s-s CONTACTO
           %ul.social.m-t-lg
-            %li.inline= link_to image_tag('icons/facebook.png'), '#'
-            %li.inline= link_to image_tag('icons/twitter.png'), '#'
-            %li.inline= link_to image_tag('icons/youtube.png'), '#'
-            %li.inline= link_to image_tag('icons/flickr.png'), '#'
+            %li.inline= link_to image_tag('icons/facebook.png'), 'https://www.facebook.com/comovamosnl', target: '_blank'
+            %li.inline= link_to image_tag('icons/twitter.png'), 'https://twitter.com/comovamosnl', target: '_blank'
+            %li.inline= link_to image_tag('icons/youtube.png'), 'http://www.youtube.com/user/comovamosnl', target: '_blank'
+            %li.inline= link_to image_tag('icons/flickr.png'), 'http://www.flickr.com/photos/comovamosnl', target: '_blank'
       .copyright
         .container.p-t-md.p-b-md
-          %p.inline-block copyright ...
-          %p.inline-block.pull-right.m-t-sm= link_to 'Aviso Legal', '#', class: 'pull-right'
+          %p.inline-block 2016 - Cómo Vamos, Nuevo León
+          %p.inline-block.pull-right.m-t-sm= link_to 'Escríbenos', 'mailto: cgarza@comovamosnl.org', class: 'pull-right'
 
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"
