@@ -1,0 +1,15 @@
+.text-section{
+  padding: 3em 0;
+  @include outer-container;
+  @include clearfix;
+  ul {
+    font-size: 1.2em;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 1em;
+  }
+  h1, h2, h3, h4, h5{
+    text-align: center;
+    margin: 1em 0;
+  }
+}
