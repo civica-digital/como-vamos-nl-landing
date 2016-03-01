@@ -20,6 +20,11 @@ section.survey{
       .stage-progress{
         height: 80px;
         position:relative;
+        .circle.active{
+          &, &::before, &::after{
+            background-color: white;
+          }
+        }
         .circle{
           &, &::before, &::after{
             content: "";
@@ -27,7 +32,7 @@ section.survey{
             height: 20px;
             border-radius: 20px;
             display: block;
-            background-color: $stage-bar-color;
+            background-color: $light-blue;
             position: absolute;
             margin-top: auto;
             margin-bottom: auto;
@@ -39,9 +44,10 @@ section.survey{
             top: 0;
           }
         }
-        .circle .active{
-          border: 10px;
-          border-color: black;
+        .active.shadow{
+          width: 40px;
+          height: 40px;
+          background-color: rgba(255, 255, 255, 0.3);
         }
         .uparrow{
           &, &::before, &::after{
