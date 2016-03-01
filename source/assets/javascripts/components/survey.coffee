@@ -6,7 +6,7 @@ window.Survey = React.createClass
     stages = @props.stages
     stages[@state.active_stage].active = true
 
-    this.setState stages: stages
+    @setState stages: stages
 
   render: ->
     React.createElement 'section', className: "survey",

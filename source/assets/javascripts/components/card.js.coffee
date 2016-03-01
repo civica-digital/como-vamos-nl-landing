@@ -1,15 +1,31 @@
 window.Card = React.createClass
   getInitialState: () ->
     selected: ""
+    placeholder:
+      truthy: "assets/images/icons/yes.png",
+      falsy: "assets/images/icons/no.png"
+    actual_placeholder: "assets/images/icons/no.png"
 
   componentWillMount: () ->
-    @setState placeholder: @props.placeholder.falsy
+    placeholder = {}
+
+    if typeof @props.placeholder isnt undefined and @props.placeholder?
+      ["truthy", "falsy", "actual_placeholder"].map (field) ->
+        if @props.placeholder[field]?
+          placeholder[field] = @props.placeholder[field]
+
+      if Object.keys(placeholder).length is 0
+        @setState placeholder
 
   handleClick: () ->
     if @state.selected == ""
-      @setState selected: "selected", placeholder: this.props.placeholder.truthy
+      @setState
+        selected: "selected"
+        actual_placeholder: @state.placeholder.truthy
     else
-      @setState selected: "", placeholder: this.props.placeholder.falsy
+      @setState
+        selected: ""
+        actual_placeholder: @state.placeholder.falsy
 
   render: () ->
     React.createElement("div",
@@ -18,7 +34,7 @@ window.Card = React.createClass
       React.createElement(
         "div",
         className: "card-image" ,
-        React.createElement("img", src: @state.placeholder, alt: "")
+        React.createElement("img", src: @state.actual_placeholder, alt: "")
       ),
       React.createElement(
         "div",

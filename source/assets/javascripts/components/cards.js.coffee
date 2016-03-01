@@ -1,7 +1,6 @@
 window.Cards = React.createClass
   getInitialState: () ->
-      placeholder: "icons/no.png"
-      items: []
+    items: []
 
   filter: () -> true
 
@@ -17,7 +16,6 @@ window.Cards = React.createClass
   render: () ->
     cards = @state.items.map (item, index) =>
       React.createElement window.Card,
-        placeholder: @props.placeholder,
         title: item.title,
         description: item.description,
         id: index
