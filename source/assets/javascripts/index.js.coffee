@@ -2,7 +2,6 @@ $(document).ready () ->
   stages = [
     {
       title: "¿Qué tema te interesa?",
-      active: true,
       placeholder:
         truthy: "assets/images/icons/yes.png",
         falsy: "assets/images/icons/no.png"
@@ -10,7 +9,6 @@ $(document).ready () ->
       label: "Avanzar " + String.fromCharCode(8594)
     }, {
       title: "¿Cuánto tiempo tienes disponible?",
-      active: false,
       placeholder:
         truthy: "assets/images/icons/yes.png",
         falsy: "assets/images/icons/no.png"
@@ -18,7 +16,6 @@ $(document).ready () ->
       label: "Avanzar " + String.fromCharCode(8594)
     }, {
       title: "¿Cómo te gustaría ayudar?",
-      active: false
       placeholder:
           truthy: "assets/images/icons/yes.png",
           falsy: "assets/images/icons/no.png"

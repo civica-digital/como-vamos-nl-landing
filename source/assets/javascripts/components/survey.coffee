@@ -3,7 +3,10 @@ window.Survey = React.createClass
     active_stage: 0
 
   componentWillMount: ->
-    this.setState stages: @props.stages
+    stages = @props.stages
+    stages[@state.active_stage].active = true
+
+    this.setState stages: stages
 
   render: ->
     React.createElement 'section', className: "survey",
