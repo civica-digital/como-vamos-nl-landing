@@ -8,9 +8,24 @@ window.Survey = React.createClass
 
     @setState stages: stages
 
+  manageButton: (e) ->
+    console.log e
+    new_stage = (@state.active_stage + 1)
+
+    if new_stage isnt @state.stages.length
+      @state.stages[@state.active_stage].active = false
+      @state.stages[new_stage].active = true
+      
+      @setState
+        active_stage: new_stage
+
+
   render: ->
+    button = @state.stages[@state.active_stage]
+    button.action = @manageButton
+
     React.createElement 'section', className: "survey",
       React.createElement window.Stages, stages: @state.stages
       React.createElement window.Cards, @state.stages[@state.active_stage]
       React.createElement "div", {className: "submit-section"},
-        React.createElement window.Button, @state.stages[@state.active_stage]
+        React.createElement window.Button, button
