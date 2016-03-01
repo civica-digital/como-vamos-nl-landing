@@ -13,7 +13,7 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 configure :development do
-  activate :livereload
+  activate :livereload, :port => '35729', :host => '127.0.0.1'
 end
 
 configure :build do
@@ -23,4 +23,8 @@ end
 activate :deploy do |deploy|
   deploy.build_before = true
   deploy.deploy_method = :git
+end
+
+after_configuration do
+  sprockets.append_path File.dirname(::React::Source.bundled_path_for('react.js'))
 end
