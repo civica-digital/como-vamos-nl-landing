@@ -1,12 +1,16 @@
 window.Stage =  React.createClass
   render: ->
-    decoration = [
-      React.createElement "div" , className: "bar"
-      React.createElement "div" , className: "circle"
-    ]
+    decoration = []
 
     if @props.active
-      decoration[2] = React.createElement "div" , className: "uparrow"
+      decoration[0] = React.createElement "div" , className: "bar"
+      decoration[1] = React.createElement "div" , className: "circle active"
+      decoration[2] = React.createElement "div" , className: "circle active shadow"
+      decoration[3] = React.createElement "div" , className: "uparrow"
+    else
+      decoration[0] = React.createElement "div" , className: "bar"
+      decoration[1] = React.createElement "div" , className: "circle"
+
 
     React.createElement "div",
       className: "stage",
