@@ -13,6 +13,9 @@ window.Cards = React.createClass
       .fail (err) ->
         console.log "error #{err}"
 
+  shouldComponentUpdate: () ->
+    @componentDidMount()
+    
   render: () ->
     cards = @state.items.map (item, index) =>
       React.createElement window.Card,
