@@ -1,0 +1,127 @@
+$light-blue: #5793CD;
+$dark-blue: #3754A3;
+$white: #ffffff;
+
+section.survey{
+  @include outer-container;
+  @include clearfix;
+  .bars{
+    @include clearfix;
+    color: $white;
+    .stage{
+      @include span-columns(4);
+      height: 120px;
+      margin: 0;
+      background-color: $dark-blue;
+      .stage-progress{
+        height: 80px;
+        position:relative;
+        .uparrow{
+          &, &::before, &::after{
+            content: "";
+            border-radius: 2px;
+            margin-bottom: -4px;
+            display:block;
+            width:10px;
+            height:10px;
+            background-color: $light-blue;
+            position: absolute;
+            margin-left:auto;
+            margin-right: auto;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            transform: rotate(45deg);
+            overflow: hidden;
+          }
+        }
+        .bar{
+          display: block;
+          position: absolute;
+          content: "";
+          height: 2px;
+          width: 50%;
+          background-color: transparent;
+          margin-top: auto;
+          margin-bottom: auto;
+          top: 0;
+          bottom: 0;
+          right: 0;
+        }
+      }
+      .stage::last-child{
+        .stage-progress{
+          .bar{
+            background-color:red;
+          }
+        }
+      }
+      .stage-name{
+        padding: 10px;
+        height: 40px;
+        background-color: $light-blue;
+        text-align: center;
+      }
+    }
+  }
+  .cards{
+    background-color: #FAFAFA;
+    @include clearfix;
+    padding: 36px 0px;
+    @include span-columns(12);
+
+    .card{
+      @include span-columns(4);
+      @include omega(3n);
+      padding: 18px 10px;
+      margin: 5px 0;
+      .card-image{
+        position: relative;
+        width: 62px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .card-header{
+        color: #4D5B5F;
+        text-align: center;
+        font-weight: bold;
+        margin: 4px 0;
+      }
+      .card-copy{
+        @include span-columns(8);
+        @include shift(2);
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+    .selected{
+      background-color: #F5F5F5;
+      border-radius: 5px;
+      .card-header{
+        color: #01a652;
+      }
+    }
+  }
+  .submit-section{
+    background-color:  #FAFAFA;
+    padding: 20px 0;
+    button{
+      font-weight: bold;
+      border-radius: 5px;
+      display:block;
+      background-color: #59C186;
+      text-transform: uppercase;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+
+      -webkit-transition: all 0.1s;
+      -moz-transition: all 0.1s;
+      transition: all 0.1s;
+
+      -webkit-box-shadow: -4px 4px 0px #01A652;
+      -moz-box-shadow: -4px 4px 0px #01A652;
+      box-shadow: -4px 4px 0px #01A652;
+    }
+  }
+}
