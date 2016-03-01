@@ -6,23 +6,18 @@ window.Cards = React.createClass
   filter: () -> true
 
   componentDidMount: () ->
-    _this = @
-
-    if (@props.filter != undefined and @props.filter != null)
-      @filter = @props.filter
+    @filter = @props.filter if @props.filter?
 
     $.getJSON(@props.urlApi)
-      .done (data) ->
-        _this.setState items: data.filter(_this.filter)
+      .done (data) =>
+        @setState items: data.filter(@filter)
       .fail (err) ->
-        console.log("error " + err);
+        console.log "error #{err}"
 
   render: () ->
-    _this = @
-
-    cards = @state.items.map (item, index) ->
+    cards = @state.items.map (item, index) =>
       React.createElement window.Card,
-        placeholder: _this.props.placeholder,
+        placeholder: @props.placeholder,
         title: item.title,
         description: item.description,
         id: index
