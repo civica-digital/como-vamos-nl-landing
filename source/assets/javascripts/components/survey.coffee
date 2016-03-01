@@ -1,7 +1,13 @@
 window.Survey = React.createClass
+  getInitialState: ->
+    active_stage: 0
+
+  componentWillMount: ->
+    this.setState stages: @props.stages
+
   render: ->
     React.createElement 'section', className: "survey",
-      React.createElement window.Stages, @props.stages
-      React.createElement window.Cards, @props.cards
+      React.createElement window.Stages, stages: @state.stages
+      React.createElement window.Cards, @state.stages[@state.active_stage]
       React.createElement "div", {className: "submit-section"},
-        React.createElement window.Button, @props.button
+        React.createElement window.Button, @state.stages[@state.active_stage]
