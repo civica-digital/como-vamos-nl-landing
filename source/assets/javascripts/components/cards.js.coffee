@@ -15,7 +15,7 @@ window.Cards = React.createClass
 
   shouldComponentUpdate: () ->
     @componentDidMount()
-    
+
   render: () ->
     cards = @state.items.map (item, index) =>
       React.createElement window.Card,
@@ -23,4 +23,4 @@ window.Cards = React.createClass
         description: item.description,
         id: index
 
-    React.createElement "div", className: "cards", cards
+    React.createElement "div", className: "cards p-md", cards
