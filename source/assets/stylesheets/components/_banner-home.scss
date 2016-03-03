@@ -5,24 +5,40 @@ section.banner{
   overflow: hidden;
   background:  url(/assets/images/illustrations/bg-banner.png) 0 440px repeat-x;
   background-size: 1px;
-
+  @include media(min-width 320px max-width 779px) {
+    height: 400px;
+    background:  url(/assets/images/illustrations/bg-banner.png) 0 340px repeat-x;
+  }
   .box{
 
-    width: 49.5%; margin: 0; padding:0;
+    width: 49%; margin: 0; padding:0; vertical-align: top; display: inline-block;
 
     a{
-      display:block; height: 490px;
+      display:block; height: 490px; padding: 0 10px;
 
       h2{color: $dark-gray; font-size: 1.6em;}
       p{color: $dark-gray; font-size: 1.2em;}
 
-      .logo img{width:250px; text-align: center;}
+      .logo img{
+        width:250px; text-align: center;
+      }
 
       &:hover{background-color: rgba($dark-gray, .05);}
+
+      @include media(min-width 320px max-width 779px) {
+        height:390px;
+        .logo{width: 120px;margin:0 auto;}
+        h2{font-size: 1em;}
+        p{font-size:1em; line-height: 1.2em; text-shadow: 1px 1px 0 rgba(#fff, .7);}
+      }
     }
 
   }
 
-  .container{ background: url(/assets/images/illustrations/bg-banner-container.png) top no-repeat;}
-
+  .container{
+    background: url(/assets/images/illustrations/bg-banner-container.png) left top no-repeat;
+    @include media(min-width 320px max-width 779px) {
+      background: url(/assets/images/illustrations/bg-banner-container.png) left -100px no-repeat;
+    }
+  }
 }

@@ -8,13 +8,25 @@
     = stylesheet_link_tag "application"
 
   %body{class: page_classes}
-    %header.cvnl
-      .container
-        .logo.pull-left.m-t-sm.m-r-md
-          = link_to './' do
-            = image_tag 'logos/cvnl.png'
-        %ul.pull-left.inline-block
-          %li.m-r-lg= link_to '¿Qué es Cómo Vamos, Nuevo León?', './que-es'
+    %header.navigation.cvnl{:role => "banner"}
+      .navigation-wrapper
+        .container
+          .logo.pull-left.m-t-sm.m-r-md
+            = link_to './' do
+              = image_tag 'logos/cvnl.png'
+          %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
+          %nav{:role => "navigation"}
+            %ul#js-navigation-menu.navigation-menu.show
+              %li.nav-link= link_to '¿Qué es Cómo Vamos, Nuevo León?', './que-es'
+          / .navigation-tools
+          /   %ul
+          /     %li.nav-link.more
+          /       %a{:href => "javascript:void(0)"} Más
+          /       %ul.submenu
+          /         %li
+          /           %a{:href => "javascript:void(0)"} Submenu Item
+          /         %li
+          /           %a{:href => "javascript:void(0)"} Another Item
 
     = yield
 

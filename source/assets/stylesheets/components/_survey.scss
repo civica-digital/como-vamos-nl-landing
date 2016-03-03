@@ -111,8 +111,11 @@ div.cards{
     height: 200px;
     border-radius: 12px;
     vertical-align: top;
-      @include media(min-width 320px max-width 1199px) {
+      @include media(min-width 780px max-width 1199px) {
         width: 300px;
+      }
+      @include media(min-width 320px max-width 1199px) {
+        width: 220px;
       }
     .card-image{
       position: relative;
