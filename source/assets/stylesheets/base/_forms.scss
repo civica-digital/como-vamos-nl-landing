@@ -82,3 +82,6 @@ select {
   max-width: 100%;
   width: auto;
 }
+input:focus, button:focus {
+    outline:none;
+}

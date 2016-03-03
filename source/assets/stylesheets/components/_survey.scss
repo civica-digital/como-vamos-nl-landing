@@ -1,22 +1,21 @@
-$light-blue: #5793CD;
-$dark-blue: #3754A3;
 $white: #ffffff;
 $stage-bar-color: white;
-$background-submit-section: #EAEAEA;
 $background-cards-section: #FAFAFA;
+$background-submit-section: darken($background-cards-section, 3%);
 
 section.poll{}
 section.survey{
   @include outer-container;
+  background-color: $background-cards-section;
   .bars{
     color: $white;
+    background-color: $light-blue;
     @include clearfix;
     .stage{
       float: left;
       width: 33.333333%;
-      height: 120px;
-      background-color: $dark-blue;
       .stage-progress{
+        background-color: $blue;
         height: 80px;
         position:relative;
         .circle.active{
@@ -49,23 +48,15 @@ section.survey{
           background-color: rgba(255, 255, 255, 0.3);
         }
         .uparrow{
-          &, &::before, &::after{
-            content: "";
-            border-radius: 2px;
-            margin-bottom: -5px;
-            display:block;
-            width:10px;
-            height:10px;
-            background-color: $light-blue;
-            position: absolute;
-            margin-left:auto;
-            margin-right: auto;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            transform: rotate(45deg);
-            overflow: hidden;
-          }
+          position: absolute;
+          left: 50%;
+          margin-left:-12px;
+          width:24px;
+          height: 10px;
+          bottom: 0;
+          background: url(../images/icons/uparrow.png) bottom no-repeat;
+          background-size: 24px;
+          z-index: 99;
         }
         .bar{
           display: block;
@@ -83,9 +74,10 @@ section.survey{
       }
       .stage-name{
         padding: 10px;
-        height: 40px;
-        background-color: $light-blue;
         text-align: center;
+        &.active{
+          font-family: 'dinnbold', sans-serif;
+        }
       }
     }
     div.stage:first-child{
@@ -111,13 +103,14 @@ section.survey{
 
 div.cards{
   @include clearfix;
-  background-color: $background-cards-section;
   text-align: center;
+  display: block;
   .card{
     display:inline-block;
-    width: 320px;
+    width: 335px;
     height: 200px;
-    border-radius: 15px;
+    border-radius: 12px;
+    vertical-align: top;
     .card-image{
       position: relative;
       width: 62px;
@@ -129,7 +122,18 @@ div.cards{
       text-align: center;
     }
     .card-copy{
-      display: -webkit-box; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      display: -webkit-box;
+      display: -moz-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -moz-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1.4em;
+    }
+    &:hover{
+      background-color: $background-submit-section;
+      cursor: pointer;
     }
   }
   .selected{
@@ -141,21 +145,23 @@ div.cards{
 }
 .submit-section{
   @include outer-container;
-  background-color: $background-submit-section;
-  padding: 30px 0;
+  @include clearfix;
   position: relative;
+  margin-top: 20px;
+
   button{
     font-family: 'dinnbold';
-    border-radius: 9px;
+    border-radius: 8px;
     display:inline-block;
     background-color: $light-green;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.3em;
     letter-spacing: 1px;
-    padding: 15px 40px;
+    padding: 25px 25px 20px 25px;
 
     position: absolute;
     left:50%;
+    top:-35px;
     transform: translate(-50%);
 
     -webkit-text-shadow: 1px -1px 0 $dark-green;
@@ -169,5 +175,23 @@ div.cards{
     -webkit-box-shadow: -7px 7px 0px #01A652;
     -moz-box-shadow: -7px 7px 0px #01A652;
     box-shadow: -7px 7px 0px #01A652;
+
+    &:hover{
+    background-color: saturate($light-green, 10%);
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+    }
+
+    &:active{
+    margin: 5px 5px 0 0;
+    -webkit-box-shadow: -2px 2px 0px #01A652;
+    -moz-box-shadow: -2px 2px 0px #01A652;
+    box-shadow: -2px 2px 0px #01A652;
+
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+    }
   }
 }
