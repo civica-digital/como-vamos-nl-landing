@@ -40,6 +40,16 @@ footer{
 
   .box{
     @include span-columns(3); @include clearfix;
+
+    @include media(min-width 640px max-width 759px, 12) {
+      @include span-columns(6);
+      @include omega(2);
+      margin-top: 30px;
+    }
+    @include media(min-width 320px max-width 639px, 1) {
+      @include span-columns(1);
+    }
+
   }
   .copyright{
     background-color: darken($gray-purple, 10%);

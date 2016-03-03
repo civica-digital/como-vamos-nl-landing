@@ -107,10 +107,13 @@ div.cards{
   display: block;
   .card{
     display:inline-block;
-    width: 335px;
+    width: 350px;
     height: 200px;
     border-radius: 12px;
     vertical-align: top;
+      @include media(min-width 320px max-width 1199px) {
+        width: 300px;
+      }
     .card-image{
       position: relative;
       width: 62px;
