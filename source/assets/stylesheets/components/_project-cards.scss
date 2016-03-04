@@ -2,6 +2,25 @@ section.proyectos{
   @include clearfix;
   @include outer-container;
   padding-bottom: 65px;
+  div.active, div:hover{
+    color: white;
+    >div:first-child{
+      background-color:#0058BE;
+      p{
+        color: white;
+      }
+    }
+    >div:last-child{
+      background-color: #5695D3;
+      p{
+        color: white;
+      }
+    }
+    button{
+      background-color: #59C186;
+      color: white;
+    }
+  }
   > div{
      @include omega(4n);
      @include span-columns(3);
@@ -30,12 +49,13 @@ section.proyectos{
         margin-bottom: -6px;
       }
      }
-     h1{
+     div:first-child > p{
        color: #253134;
-       padding: 34px 0px;
+       padding: 14px 0px;
+       font-weight: bold;
        text-align: center;
      }
-     p{
+     div:nth-child(2) > p{
       padding-top: 8px;
       padding-bottom: 8px;
      }
