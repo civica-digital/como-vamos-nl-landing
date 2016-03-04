@@ -1,7 +1,7 @@
 section.proyectos{
   @include clearfix;
   @include outer-container;
-  padding: 65px 0;
+  padding-bottom: 65px;
   > div{
      @include omega(4n);
      @include span-columns(3);
