@@ -5,8 +5,11 @@ section.proyectos{
   > div{
      @include omega(4n);
      @include span-columns(3);
+     width: 24.4%;
+     margin-right: 0.71%;
+     margin-bottom: 0.71%;
      h1, p{
-       font-size: 13px;
+       font-size: 16px;
      }
      div:nth-child(1){
        background-color: #D1D9E1;
@@ -15,8 +18,10 @@ section.proyectos{
       min-height: 170px;
      }
      >div{
+      background-color: #DCE2E8;
       overflow: hidden;
-      padding: 26px 16px;
+      padding: 16px 16px;
+      text-align: center;
       img{
         width: 30px;
         display: block;
@@ -27,8 +32,7 @@ section.proyectos{
      }
      h1{
        color: #253134;
-       height: 100px;
-       padding: 34px 30px;
+       padding: 34px 0px;
        text-align: center;
      }
      p{
