@@ -37,17 +37,14 @@ window.Card = React.createClass
         React.createElement("img", src: @state.actual_placeholder, alt: "")
       ),
       React.createElement(
-        "div",
-        className: "card-header",
+        "h4",
+        [],
         @props.title
       ),
       React.createElement(
-        "div",
-        className: "card-copy",
-        React.createElement(
-          "p",
-          null,
-          @props.description
-        )
+        "p",
+        [],
+        null,
+        @props.description
       )
     )

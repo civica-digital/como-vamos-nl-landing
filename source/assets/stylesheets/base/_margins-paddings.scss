@@ -53,12 +53,12 @@
 .p-b-0{padding-bottom:0}
 
 .p-xxs{padding: $m-xxs}
-.p-xs{padding: $m-xxs $m-xs;}
-.p-sm{padding: $m-xs $m-sm;}
-.p{padding: $m-sm $m;}
-.p-md{padding: $m $m-md;}
-.p-lg{padding: $m-md $m-lg;}
-.p-xl{padding: $m-lg $m-xl;}
+.p-xs{padding: $m-xs;}
+.p-sm{padding: $m-sm;}
+.p{padding: $m;}
+.p-md{padding: $m-md;}
+.p-lg{padding: $m-lg;}
+.p-xl{padding: $m-xl;}
 .p-n{padding: $m-n!important}
 
 .p-l-none{padding-left: $m-n}
