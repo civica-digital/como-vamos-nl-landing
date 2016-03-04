@@ -1,0 +1,46 @@
+section.proyectos{
+  @include clearfix;
+  @include outer-container;
+  padding: 65px 0;
+  > div{
+     @include omega(4n);
+     @include span-columns(3);
+     h1, p{
+       font-size: 13px;
+     }
+     div:nth-child(1){
+       background-color: #D1D9E1;
+     }
+     >div:nth-child(2){
+      min-height: 170px;
+     }
+     >div{
+      overflow: hidden;
+      padding: 26px 16px;
+      img{
+        width: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -6px;
+      }
+     }
+     h1{
+       color: #253134;
+       height: 100px;
+       padding: 34px 30px;
+       text-align: center;
+     }
+     p{
+      padding-top: 8px;
+      padding-bottom: 8px;
+     }
+     button{
+       height: 35px;
+       padding: 2px 15px;
+       display:block;
+       margin-left: auto;
+       margin-right: auto;
+     }
+  }
+}
