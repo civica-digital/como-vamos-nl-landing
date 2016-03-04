@@ -5,6 +5,7 @@
 @import "survey";
 @import "survey-navbar";
 @import "project-cards";
+@import "image-cards";
 
 .container{
 	@include media(min-width 960px max-width 1199px) {
