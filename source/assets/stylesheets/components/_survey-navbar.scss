@@ -4,8 +4,15 @@ $navbar-background-3: #2B75C4;
 
 section.survey-navbar{
   background-color: #E9EDF2;
-  title{
-    height: 190px;
+  section:first-child{
+    @include outer-container;
+    @include clearfix;
+    display: block;
+    padding-bottom: 16px;
+    padding-top: 36px;
+    h1{
+      font-size: 26px;
+    }
   }
   > h1{
     color: pink;
@@ -14,6 +21,11 @@ section.survey-navbar{
   }
   div.bar{
     @include outer-container;
+    @include clearfix;
+    color: white;
+    background-color: $navbar-background-2;
+    height: 70px;
+
     div > img{
       height: 70px;
       float:left;
@@ -48,7 +60,5 @@ section.survey-navbar{
     div:last-child{
       background-color: $navbar-background-3;
     }
-    color: white;
-    background-color: $navbar-background-2;
   }
 }
