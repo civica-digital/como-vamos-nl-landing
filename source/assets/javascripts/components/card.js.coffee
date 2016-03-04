@@ -29,7 +29,7 @@ window.Card = React.createClass
 
   render: () ->
     React.createElement("div",
-        className: "card m-xs p-md " + @state.selected,
+        className: "card " + @state.selected,
         onClick: @handleClick
       React.createElement(
         "div",
@@ -38,12 +38,12 @@ window.Card = React.createClass
       ),
       React.createElement(
         "h4",
-        className: "card-header m-t-md",
+        [],
         @props.title
       ),
       React.createElement(
         "p",
-        className: "card-copy m-t-xs",
+        [],
         null,
         @props.description
       )

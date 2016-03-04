@@ -11,15 +11,29 @@ section.banner{
   }
   .box{
 
-    width: 49%; margin: 0; padding:0; vertical-align: top; display: inline-block;
+    width: 49%;
+    margin: 0;
+    padding:0;
+    vertical-align: top;
+    display: inline-block;
 
     a{
-      display:block; height: 490px; padding: 0 10px;
+      display:block;
+      height: 490px;
+      padding: 0 10px;
 
-      h2{color: $dark-gray; font-size: 1.6em;}
-      p{color: $dark-gray; font-size: 1.2em;}
+      h2{
+        color: $dark-gray;
+        font-size: 1.6em;
+        @extend .m-t-xl;
+      }
+      p{
+        color: $dark-gray;
+        font-size: 1.2em;
+      }
 
       .logo img{
+        @extend .p-t-xxl;
         width:250px; text-align: center;
       }
 

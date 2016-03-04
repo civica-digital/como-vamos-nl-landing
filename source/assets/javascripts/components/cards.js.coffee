@@ -23,4 +23,4 @@ window.Cards = React.createClass
         description: item.description,
         id: index
 
-    React.createElement "div", className: "cards p-md", cards
+    React.createElement "div", className: "cards", cards

@@ -24,7 +24,11 @@ header.navigation {
   z-index: 999;
 
   &.cvnl{
-    .logo{width: 100px;}
+    .logo{
+      width: 100px;
+      @extend .m-t-sm;
+      @extend .m-r-md;
+    }
   }
 
   .navigation-wrapper {

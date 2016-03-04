@@ -4,6 +4,10 @@ footer{
   color:#fff;
   margin-top:60px;
 
+  .container{
+    @extend .p-b-xl;
+  }
+
   &:before{
     height: 9px;
     background-color: $lime;
@@ -25,21 +29,30 @@ footer{
       background-image: url('/assets/images/illustrations/footer-ornament.png');
     }
   }
+  h3{
+    @extend .m-t-md;
+    @extend .l-s-s; //letter-spacing-small
+  }
   a{
     color:#fff;
     &:hover{color:$yellow;}
   }
+  ul{
+    @extend .m-t-lg;
 
-  ul.social{
-    img{width: 30px;}
+    &.social{
+      img{width: 30px;}
+    }
+
+    li{line-height: 2em;}
   }
-
-  li{line-height: 2em;}
 
   .logo img{width:100px;}
 
   .box{
-    @include span-columns(3); @include clearfix;
+    @include span-columns(3);
+    @include clearfix;
+    @extend .p-t-xl;
 
     @include media(min-width 640px max-width 759px, 12) {
       @include span-columns(6);
@@ -53,6 +66,12 @@ footer{
   }
   .copyright{
     background-color: darken($gray-purple, 10%);
-    p{font-size: .8em;}
+
+    .container{
+      @extend .p-t-md;
+      @extend .p-b-md;
+      font-size: .8em;
+    }
+    a{float: right;}
   }
 }

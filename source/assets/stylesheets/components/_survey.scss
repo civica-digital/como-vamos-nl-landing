@@ -3,9 +3,15 @@ $stage-bar-color: white;
 $background-cards-section: #FAFAFA;
 $background-submit-section: darken($background-cards-section, 3%);
 
-section.poll{}
+section.poll{
+  @extend .p-b-xl;
+  .container{
+    @extend .m-t-xxl;
+  }
+}
 section.survey{
   @include outer-container;
+  @extend .m-t-xl;
   background-color: $background-cards-section;
   .bars{
     color: $white;
@@ -101,11 +107,15 @@ section.survey{
   }
 }
 
-div.cards{
+.cards{
   @include clearfix;
+  @extend  .p-md;
   text-align: center;
   display: block;
+
   .card{
+    @extend  .m-xs;
+    @extend  .p-md;
     display:inline-block;
     width: 350px;
     height: 200px;
@@ -123,11 +133,12 @@ div.cards{
       margin-left: auto;
       margin-right: auto;
     }
-    h4.card-header{
-      color: #4D5B5F;
+    h4{
+      @extend .m-t-md;
       text-align: center;
     }
-    .card-copy{
+    p{
+      @extend .m-t-xs;
       display: -webkit-box;
       display: -moz-box;
       overflow: hidden;
@@ -144,7 +155,7 @@ div.cards{
   }
   .selected{
     background-color: $background-submit-section;
-    h4.card-header{
+    h4{
       color: #01a652;
     }
   }
