@@ -107,7 +107,6 @@ header.navigation {
     @include media ($horizontal-bar-mode) {
       background: transparent;
       display: inline;
-      line-height: $navigation-height / 2;
       text-decoration: none;
       width: auto;
     }
