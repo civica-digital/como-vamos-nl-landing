@@ -27,5 +27,5 @@ window.Survey = React.createClass
     React.createElement 'section', className: "survey",
       React.createElement window.Stages, stages: @state.stages
       React.createElement window.Cards, @state.stages[@state.active_stage]
-      React.createElement "div", {className: "submit-section"},
-        React.createElement window.Button, button
+        React.createElement "div", {className: "submit-section"},
+          React.createElement window.Button, button
