@@ -1,24 +1,32 @@
+$title-background-hover: #0058BE;
+$body-background-hover: #5695D3;
+$button-color-hover: #59C186;
+$text-color-hover: white;
+$title-background: #D1D9E1;
+$body-background: #DCE2E8;
+
+
 section.proyectos{
   @include clearfix;
   @include outer-container;
   padding-bottom: 65px;
   div.active, div:hover{
-    color: white;
-    >div:first-child{
-      background-color:#0058BE;
+    color: $text-color-hover;
+    >div:nth-child(1){
+      background-color:$title-background-hover;
       p{
-        color: white;
+        color: $text-color-hover;
       }
     }
-    >div:last-child{
-      background-color: #5695D3;
+    >div:nth-child(2){
+      background-color: $body-background-hover;
       p{
-        color: white;
+        color: $text-color-hover;
       }
     }
     button{
-      background-color: #59C186;
-      color: white;
+      background-color: $button-color-hover;
+      color: $text-color-hover;
     }
   }
   > div{
@@ -31,13 +39,13 @@ section.proyectos{
        font-size: 16px;
      }
      div:nth-child(1){
-       background-color: #D1D9E1;
+       background-color: $title-background;
      }
      >div:nth-child(2){
       min-height: 170px;
      }
      >div{
-      background-color: #DCE2E8;
+      background-color: $body-background;
       overflow: hidden;
       padding: 16px 16px;
       text-align: center;
