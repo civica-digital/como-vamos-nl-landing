@@ -15,10 +15,17 @@ window.Survey = React.createClass
     if new_stage isnt @state.stages.length
       @state.stages[@state.active_stage].active = false
       @state.stages[new_stage].active = true
-      
+
       @setState
         active_stage: new_stage
+    else
+      window.location = '/evalua'
 
+  shouldComponentUpdate: () ->
+
+    $('html, body').animate(
+      {scrollTop: $(".survey").offset().top }, 800)
+    true
 
   render: ->
     button = @state.stages[@state.active_stage]
