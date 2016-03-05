@@ -7,14 +7,20 @@ window.Cards = React.createClass
   componentDidMount: () ->
     @filter = @props.filter if @props.filter?
 
-    $.getJSON(@props.urlApi)
-      .done (data) =>
-        @setState items: data.filter(@filter)
-      .fail (err) ->
-        console.log "error #{err}"
+    if typeof @props.urlApi == 'object'
+      @setState items: @props.urlApi
+    else
+      $.getJSON(@props.urlApi)
+        .done (data) =>
+          @setState items: data.filter(@filter)
+        .fail (err) ->
+          console.log "error #{err}"
 
-  shouldComponentUpdate: () ->
+    true
+
+  componentDidUpdate: () ->
     @componentDidMount()
+    true
 
   render: () ->
     cards = @state.items.map (item, index) =>
