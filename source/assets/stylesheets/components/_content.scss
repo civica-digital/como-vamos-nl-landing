@@ -74,5 +74,10 @@
       top:-30px;
     }
   }
+  .image{
+    @extend .p-t-lg;
+    @extend .p-b-lg;
+    text-align: center;
+  }
 }
 
