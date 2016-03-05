@@ -1,0 +1,45 @@
+$tagline-color: #788285;
+$image-border-color: #9C9DAB;
+$title-background-color: $medium-gray;
+
+section.tagline{
+  @include clearfix;
+  @include outer-container;
+  padding: 20px 0;
+  font-weight: bold;
+  color:$tagline-color;
+}
+
+section.organizaciones{
+  @include clearfix;
+  @include outer-container;
+  padding-bottom: 65px;
+  > div{
+     @include omega(6n);
+     float: left;
+     display: block;
+     width: 15.8%;
+     margin-right: 1%;
+     margin-bottom: 1%;
+     > div > img {
+       min-height:190px;
+       display: table-cell;
+       position: relative;
+       margin:auto;
+     }
+     > div > p{
+      font-size: 14px;
+      color: white;
+      text-align: center;
+      line-height: 1em;
+      padding: 8px 26px;
+     }
+     > div:nth-child(1){
+       border:1px solid $image-border-color;
+       min-height: 190px;
+     }
+     > div:nth-child(2){
+      background-color: $title-background-color;
+     }
+  }
+}
