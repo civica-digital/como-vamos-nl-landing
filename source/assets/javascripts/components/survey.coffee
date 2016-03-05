@@ -19,7 +19,7 @@ window.Survey = React.createClass
       @setState
         active_stage: new_stage
     else
-      window.location = '/evalua'
+      window.location = 'evalua'
 
   shouldComponentUpdate: () ->
 
