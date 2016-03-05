@@ -1,9 +1,10 @@
 $navbar-background-1: #005BBB;
 $navbar-background-2: #1769C0;
 $navbar-background-3: #2B75C4;
+$navbar-background: #E9EDF2;
 
 section.survey-navbar{
-  background-color: #E9EDF2;
+  background-color: $navbar-background;
   section:first-child{
     @include outer-container;
     @include clearfix;
@@ -13,11 +14,6 @@ section.survey-navbar{
     h1{
       font-size: 26px;
     }
-  }
-  > h1{
-    color: pink;
-    font-size: 1.6em;
-    font-weight: 400;
   }
   div.bar{
     @include outer-container;
