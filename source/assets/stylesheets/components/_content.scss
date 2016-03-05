@@ -1,0 +1,83 @@
+.content{
+  @include clearfix;
+  .container{
+    @include outer-container;
+    @include clearfix;
+    @extend .m-t-xl;
+
+    h3{
+      color: $light-blue;
+    }
+    h4{
+      color:$dark-green;
+      @extend .m-t-lg;
+    }
+
+    p{
+      @extend .p-t-md;
+    }
+
+    ol{
+      @extend .m-t-md;
+      @extend .m-b-xl;
+      list-style-type: none;
+      li{
+        counter-increment: step-counter;
+        margin-bottom: 10px;
+        &:before{
+          content: counter(step-counter);
+          margin-right: 10px;
+          font-size: 80%;
+          background-color: $light-gray;
+          color: $dark-gray;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          line-height: 30px;
+          border-radius: 50%;
+          font-family:'dinnbold', sans-serif;
+          display: inline-block;
+        }
+      }
+    }
+    ul{
+      @extend .m-t-md;
+      @extend .m-b-xl;
+      li{
+        list-style-type: none;
+        &:before{
+          content: "»";
+          margin-right: 10px;
+          color: $lime;
+          width: 10px;
+          height: 10px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  hr{
+    border-color:$lime;
+    border-width: 5px;
+    position: relative;
+    @extend .m-b-xl;
+    @extend .p-b-lg;
+    &:after{
+      content: '';
+      background-image: url(../images/icons/hr.png);
+      background-size: 60px;
+      display: block;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      right: 0;
+      top:-30px;
+    }
+  }
+  .image{
+    @extend .p-t-lg;
+    @extend .p-b-lg;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,10 @@
+section.banner-event{
+  position: relative;
+  @include outer-container;
+  @include clearfix;
+  @extend .p-b-md;
+
+  .submit-section{
+    @extend .p-b-xl;
+  }
+}

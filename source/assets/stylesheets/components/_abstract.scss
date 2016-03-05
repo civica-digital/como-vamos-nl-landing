@@ -1,0 +1,20 @@
+.abstract{
+  @include clearfix;
+  .container{
+    @include outer-container;
+    @include clearfix;
+    @extend .p-b-xl;
+    @extend .p-t-xl;
+    background-color: $light-gray;
+
+    border-bottom: 1px dashed $light-gray;
+
+    p{
+      font-size: 1.2em;
+      line-height: 1.8em;
+      margin-top: .9em;
+      max-width: 80%;
+      display: inline-block;
+    }
+  }
+}
