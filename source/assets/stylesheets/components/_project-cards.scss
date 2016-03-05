@@ -1,0 +1,78 @@
+$title-background-hover: #0058BE;
+$body-background-hover: #5695D3;
+$button-color-hover: $light-green;
+$text-color-hover: white;
+$title-background: #D1D9E1;
+$body-background: #DCE2E8;
+
+
+section.proyectos{
+  @include clearfix;
+  @include outer-container;
+  padding-bottom: 65px;
+  div.active, div:hover{
+    color: $text-color-hover;
+    >div:nth-child(1){
+      background-color:$title-background-hover;
+      p{
+        color: $text-color-hover;
+      }
+    }
+    >div:nth-child(2){
+      background-color: $body-background-hover;
+      p{
+        color: $text-color-hover;
+      }
+    }
+    button{
+      background-color: $button-color-hover;
+      color: $text-color-hover;
+    }
+  }
+  > div{
+     @include omega(4n);
+     @include span-columns(3);
+     width: 24.4%;
+     margin-right: 0.71%;
+     margin-bottom: 0.71%;
+     h1, p{
+       font-size: 16px;
+     }
+     div:nth-child(1){
+       background-color: $title-background;
+     }
+     >div:nth-child(2){
+      min-height: 170px;
+     }
+     >div{
+      background-color: $body-background;
+      overflow: hidden;
+      padding: 16px 16px;
+      text-align: center;
+      img{
+        width: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -6px;
+      }
+     }
+     div:first-child > p{
+       color: #253134;
+       padding: 14px 0px;
+       font-weight: bold;
+       text-align: center;
+     }
+     div:nth-child(2) > p{
+      padding-top: 8px;
+      padding-bottom: 8px;
+     }
+     button{
+       height: 35px;
+       padding: 2px 15px;
+       display:block;
+       margin-left: auto;
+       margin-right: auto;
+     }
+  }
+}

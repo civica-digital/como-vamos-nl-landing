@@ -1,0 +1,60 @@
+$navbar-background-1: #005BBB;
+$navbar-background-2: #1769C0;
+$navbar-background-3: #2B75C4;
+$navbar-background: $light-gray;
+
+section.survey-navbar{
+  background-color: $navbar-background;
+  section:first-child{
+    @include outer-container;
+    @include clearfix;
+    display: block;
+    padding-bottom: 16px;
+    padding-top: 36px;
+    h1{
+      font-size: 26px;
+    }
+  }
+  div.bar{
+    @include outer-container;
+    @include clearfix;
+    color: white;
+    background-color: $navbar-background-2;
+    height: 70px;
+
+    div > img{
+      height: 70px;
+      float:left;
+    }
+     > div{
+      @include omega(3n);
+      @include span-columns(4);
+      height: 70px;
+      float: left;
+      background-color: $navbar-background-2;
+      padding: 18px 20px;
+      label{
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+      > p{
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+    div:first-child{
+      background-color: $navbar-background-1;
+      padding-top: 0;
+      padding-left: 0;
+      > label{
+        padding-top: 18px;
+      }
+      :not(img) {
+        padding-left: 88px;
+      }
+    }
+    div:last-child{
+      background-color: $navbar-background-3;
+    }
+  }
+}
