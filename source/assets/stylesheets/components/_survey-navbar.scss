@@ -1,7 +1,7 @@
 $navbar-background-1: #005BBB;
 $navbar-background-2: #1769C0;
 $navbar-background-3: #2B75C4;
-$navbar-background: #E9EDF2;
+$navbar-background: $light-gray;
 
 section.survey-navbar{
   background-color: $navbar-background;

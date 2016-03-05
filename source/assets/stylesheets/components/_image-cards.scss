@@ -1,6 +1,6 @@
 $tagline-color: #788285;
 $image-border-color: #9C9DAB;
-$title-background-color: #525F63;
+$title-background-color: $medium-gray;
 
 section.tagline{
   @include clearfix;
