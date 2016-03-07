@@ -1,8 +1,8 @@
-$(document).ready () ->
-  stages = [
+$(document).ready(() => {
+  var stages = [
     {
       title: "¿Qué tema te interesa?",
-      urlApi: "https://script.google.com/macros/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=ejes"
+      urlApi: "https://script.google.com/macros/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=ejes",
       label: "Avanzar " + String.fromCharCode(8594)
     }, {
       title: "¿Cuánto tiempo tienes disponible?",
@@ -47,6 +47,8 @@ $(document).ready () ->
       ],
       label: "Comienza a participar " + String.fromCharCode(8594),
     }
-  ]
-  React.render React.createElement(window.Survey, stages: stages),
-  document.getElementById 'survey'
+  ];
+
+  React.render(React.createElement(window.Survey, {stages: stages}),
+    document.getElementById('survey'));
+})

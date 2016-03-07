@@ -3,11 +3,11 @@
 //= require_tree ./components
 //= require_tree .
 
-$(document).ready(function() {
+$(document).ready(() => {
   var menuToggle = $('#js-mobile-menu').unbind();
   $('#js-navigation-menu').removeClass("show");
 
-  menuToggle.on('click', function(e) {
+  menuToggle.on('click', (e) => {
     e.preventDefault();
     $('#js-navigation-menu').slideToggle(function(){
       if($('#js-navigation-menu').is(':hidden')) {
@@ -18,8 +18,8 @@ $(document).ready(function() {
 
 });
 
-//scroll-menu
-  (function (jQuery) {
+//scroll-menu  
+(function (jQuery) {
     jQuery.mark = {
       jump: function (options) {
         var defaults = {

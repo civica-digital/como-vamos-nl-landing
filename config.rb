@@ -1,5 +1,9 @@
 activate :directory_indexes
 activate :autoprefixer
+activate :react
+activate :es6
+
+activate :sprockets
 
 set :relative_links, true
 set :css_dir, "assets/stylesheets"
