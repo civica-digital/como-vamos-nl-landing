@@ -17,10 +17,16 @@ window.Card = React.createClass({
         if (typeof this.props.placeholder !== 'undefined' && this.props.placeholder[field] !== null)
           placeholder[field] = this.props.placeholder[field]
         })
-      if(Object.keys(placeholder).length === 0){
-        this.setState(placeholder)
+      if(Object.keys(placeholder).length != 0){
+        this.placeholder = placeholder
       }
     }
+  },
+  componentWillReceiveProps (nextProps){
+    this.setState({
+      selected: "",
+      actual_placeholder: this.state.placeholder.falsy
+    })
   },
   handleClick() {
     if (this.state.selected == "")
@@ -41,7 +47,7 @@ window.Card = React.createClass({
       </div>
       <h4>{this.props.title}</h4>
       <p>
-        this.props.description
+        {this.props.description}
       </p>
     </div>
   }

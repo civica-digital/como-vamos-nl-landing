@@ -6,7 +6,7 @@ window.Survey = React.createClass
     stages = @props.stages
     stages[@state.active_stage].active = true
 
-    @setState stages: stages
+    this.state.stages = stages
 
   manageButton: (e) ->
     console.log e

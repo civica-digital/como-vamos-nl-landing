@@ -18,8 +18,18 @@ window.Cards = React.createClass
 
     true
 
-  componentDidUpdate: () ->
-    @componentDidMount()
+  componentWillReceiveProps: (nextProps) ->
+    @state.items = []
+    @filter = nextProps.filter if nextProps.filter?
+
+    if typeof nextProps.urlApi == 'object'
+      @setState items: nextProps.urlApi
+    else
+      $.getJSON(nextProps.urlApi)
+        .done (data) =>
+          @setState items: data.filter(@filter)
+        .fail (err) ->
+          console.log "error #{err}"
     true
 
   render: () ->
