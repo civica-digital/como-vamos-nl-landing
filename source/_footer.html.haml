@@ -1,0 +1,32 @@
+%footer
+  .container.ornament
+    .box.text-center
+      %h3 ACERCA DE
+      %ul
+        %li= link_to '¿Qué es Cómo Vamos, Nuevo León?', 'que-es'
+        %li= link_to 'Organizaciones', '#'
+        %li= link_to 'Línea de tiempo', '#'
+        %li= link_to 'Equipo y Gobernanza', '#'
+    .box.text-center
+      =link_to image_tag('logos/acv-byn.png'), '#', class: 'logo'
+      %ul
+        %li= link_to 'Las 11 acciones', '#'
+        %li= link_to 'Reuniones con Alcaldes', '#'
+        %li= link_to 'Avances', '#'
+    .box.text-center
+      =link_to image_tag('logos/gcv-byn.png'), '#', class: 'logo'
+      %ul
+        %li= link_to 'Compromisos y metas', '#'
+        %li= link_to 'Reuniones con el Gobernador', '#'
+        %li= link_to 'Avances', '#'
+    .box.text-center
+      %h3 CONTACTO
+      %ul.social
+        %li.inline= link_to image_tag('icons/facebook.png'), 'https://www.facebook.com/comovamosnl', target: '_blank'
+        %li.inline= link_to image_tag('icons/twitter.png'), 'https://twitter.com/comovamosnl', target: '_blank'
+        %li.inline= link_to image_tag('icons/youtube.png'), 'http://www.youtube.com/user/comovamosnl', target: '_blank'
+        %li.inline= link_to image_tag('icons/flickr.png'), 'http://www.flickr.com/photos/comovamosnl', target: '_blank'
+  .copyright
+    .container
+      %span 2016 - Cómo Vamos, Nuevo León
+      = link_to 'Escríbenos', 'mailto: cgarza@comovamosnl.org', class: 'pull-right'

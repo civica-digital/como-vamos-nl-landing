@@ -6,11 +6,13 @@ set :css_dir, "assets/stylesheets"
 set :js_dir, "assets/javascripts"
 set :images_dir, "assets/images"
 set :fonts_dir, "assets/fonts"
-set :layout, "layouts/application"
+#set :layout, "layouts/application"
 
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+
+page '/paseometropolitano', layout: 'event'
 
 configure :development do
   activate :livereload, :port => '35729', :host => '127.0.0.1'
