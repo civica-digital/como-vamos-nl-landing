@@ -7,13 +7,13 @@ source "https://rubygems.org"
 # gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 gem "bourbon", "~> 4.2"
-gem "middleman", "~> 4.0"
+gem "middleman", "~> 3.3"
 gem "middleman-autoprefixer", "~> 2.6"
-gem "middleman-deploy", "= 2.0.0.pre.alpha"
+gem "middleman-deploy", "~>  1.0"
 gem "middleman-livereload", "~> 3.4"
-gem "middleman-sprockets", github: "middleman/middleman-sprockets", ref:"865fa21"
+gem "middleman-sprockets"
 gem "neat", "~> 1.7"
 gem "sassc", "~> 1.8"
 gem "jquery-middleman"
-gem "middleman-react", github: 'zoek1/middleman-react'
-gem "middleman-es6", github: "zoek1/middleman-es6"
+gem "middleman-react"
+gem "middleman-es6"
