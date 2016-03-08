@@ -5,7 +5,7 @@ layout: event
 ---
 .scroll-on-page
   .container
-    =link_to 'Qué es Paseo Metropolitano', '#que-es', class: 'scroll-on-page-link'
+    =link_to '¿Qué es?', '#que-es', class: 'scroll-on-page-link'
     =link_to 'Ruta', '#ruta', class: 'scroll-on-page-link'
     =link_to 'Staff', '#staff', class: 'scroll-on-page-link'
     =link_to 'Normas', '#normas', class: 'scroll-on-page-link'
@@ -14,7 +14,7 @@ layout: event
   %section.banner-event
     .container
       =image_tag 'eventos/paseo-metropolitano.png'
-  %section.abstract#que-es
+  %section.abstract#que-es.anchor
     .container
       .abstract-content
         %h1 ¿Qué es Paseo Metropolitano?
@@ -24,13 +24,13 @@ layout: event
           Es un esfuerzo conjunto entre organizaciones de la sociedad civil, universidades y gobiernos locales para promover una visión metropolitana e integral de las vías recreativas, y para identificar retos y oportunidades de proyectos de movilidad más amplios.
   %section.content
     .container
-      %h3#ruta Ruta
+      %h3#ruta.anchor Ruta
       .image
         = link_to image_tag('eventos/paseo-metropolitano-ruta.png'), image_path('eventos/paseo-metropolitano-ruta.png'), target: '_blank'
 
       %hr
 
-      %h3#staff Staff
+      %h3#staff.anchor Staff
       %p En ésta segunda edición del Paseo Metropolitano esperamos contar con cientos de voluntarios que formen parte del STAFF, los cuales estarán ubicados en diferentes zonas de la ruta acompañando y apoyando a los asistentes.
       %h4 La experiencia del STAFF consistirá en:
       %ul
@@ -50,7 +50,7 @@ layout: event
           %button Quiero sumarme al Staff →
       %hr
 
-      %h3#normas Normas de Convivencia
+      %h3#normas.anchor Normas de Convivencia
       %h4 Asistentes
       %ol
         %li Dentro de la ruta no se permiten ningún vehículo de motor (ej. Motocicletas, autos, etc).
@@ -78,10 +78,3 @@ layout: event
         %li En el caso de la música, esta deberá de ser apropiada para un evento familiar sin mensajes ofensivos o violentos.
         %li Toda la publicidad y participación dentro del evento tendrá que ser coordinada por el municipio correspondiente.
         %li Queda estrictamente prohibido la repartición de folletos, panfletos, trípticos o material de papel.
-
-
-
-
-
-
-

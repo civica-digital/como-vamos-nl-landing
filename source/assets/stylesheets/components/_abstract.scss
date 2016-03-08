@@ -1,5 +1,7 @@
 .abstract{
   @include clearfix;
+  @extend .m-t-xs;
+
   .abstract-content{
     @include outer-container;
     @include clearfix;
@@ -16,6 +18,15 @@
       margin-top: .9em;
       max-width: 80%;
       display: inline-block;
+    }
+    @include media(min-width 320px max-width 779px) {
+      h1{
+        font-size: 2em;
+      }
+      p{
+        font-size: 1.1em;
+        line-height: 1.4em;
+      }
     }
   }
 }
