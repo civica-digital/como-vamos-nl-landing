@@ -1,11 +1,12 @@
 .abstract{
   @include clearfix;
-  .container{
+  .abstract-content{
     @include outer-container;
     @include clearfix;
     @extend .p-b-xl;
     @extend .p-t-xl;
     background-color: $light-gray;
+    text-align: center;
 
     border-bottom: 1px dashed $light-gray;
 

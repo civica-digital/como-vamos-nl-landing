@@ -5,15 +5,10 @@ layout: event
 ---
 .scroll-on-page
   .container
-    %ul
-      %li
-        %a.scroll-on-page-link{:href => "#que-es"} Qué es Paseo Metropolitano
-      %li
-        %a.scroll-on-page-link{:href => "#ruta"} Ruta
-      %li
-        %a.scroll-on-page-link{:href => "#staff"} Staff
-      %li
-        %a.scroll-on-page-link{:href => "#normas"} Normas
+    =link_to 'Qué es Paseo Metropolitano', '#que-es', class: 'scroll-on-page-link'
+    =link_to 'Ruta', '#ruta', class: 'scroll-on-page-link'
+    =link_to 'Staff', '#staff', class: 'scroll-on-page-link'
+    =link_to 'Normas', '#normas', class: 'scroll-on-page-link'
 
 .event-page
   %section.banner-event
@@ -21,7 +16,7 @@ layout: event
       =image_tag 'eventos/paseo-metropolitano.png'
   %section.abstract#que-es
     .container
-      .text-center
+      .abstract-content
         %h1 ¿Qué es Paseo Metropolitano?
         %p
           Un evento para toda la familia que consiste en una ruta que integra las vías recreativas de varios municipios del Área Metropolitana de Monterrey. Es el segundo año que se realiza este gran paseo que incluye actividades recreativas, se puede recorrer a pie, bicicleta, patines, triciclo, monociclo, en fin, en cualquier forma de movilidad sustentable.
