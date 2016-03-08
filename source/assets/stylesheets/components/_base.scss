@@ -10,6 +10,7 @@
 @import "survey-navbar";
 @import "project-cards";
 @import "image-cards";
+@import "event-scroll-menu";
 
 .container{
   @include media(min-width 960px max-width 1199px) {

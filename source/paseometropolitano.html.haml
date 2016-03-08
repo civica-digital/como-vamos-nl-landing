@@ -3,12 +3,23 @@ title: Paseo Metropolitano 2016
 layout: event
 
 ---
+.scroll-on-page
+  .container
+    %ul
+      %li
+        %a.scroll-on-page-link{:href => "#que-es"} Qué es Paseo Metropolitano
+      %li
+        %a.scroll-on-page-link{:href => "#ruta"} Ruta
+      %li
+        %a.scroll-on-page-link{:href => "#staff"} Staff
+      %li
+        %a.scroll-on-page-link{:href => "#normas"} Normas
 
 .event-page
   %section.banner-event
     .container
       =image_tag 'eventos/paseo-metropolitano.png'
-  %section.abstract
+  %section.abstract#que-es
     .container
       .text-center
         %h1 ¿Qué es Paseo Metropolitano?
@@ -18,13 +29,13 @@ layout: event
           Es un esfuerzo conjunto entre organizaciones de la sociedad civil, universidades y gobiernos locales para promover una visión metropolitana e integral de las vías recreativas, y para identificar retos y oportunidades de proyectos de movilidad más amplios.
   %section.content
     .container
-      %h3 Ruta
+      %h3#ruta Ruta
       .image
         = link_to image_tag('eventos/paseo-metropolitano-ruta.png'), image_path('eventos/paseo-metropolitano-ruta.png'), target: '_blank'
 
       %hr
 
-      %h3 Staff
+      %h3#staff Staff
       %p En ésta segunda edición del Paseo Metropolitano esperamos contar con cientos de voluntarios que formen parte del STAFF, los cuales estarán ubicados en diferentes zonas de la ruta acompañando y apoyando a los asistentes.
       %h4 La experiencia del STAFF consistirá en:
       %ul
@@ -44,7 +55,7 @@ layout: event
           %button Quiero sumarme al Staff →
       %hr
 
-      %h3 Normas de Convivencia
+      %h3#normas Normas de Convivencia
       %h4 Asistentes
       %ol
         %li Dentro de la ruta no se permiten ningún vehículo de motor (ej. Motocicletas, autos, etc).
