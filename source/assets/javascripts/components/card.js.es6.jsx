@@ -1,16 +1,14 @@
 window.Card = React.createClass({
   getInitialState () {
     return {
-      selected: "",
       placeholder: {
-        truthy: "assets/images/icons/yes.png",
-        falsy: "assets/images/icons/no.png"
-      },
-      actual_placeholder: "assets/images/icons/no.png"
+        true: "assets/images/icons/yes.png",
+        false: "assets/images/icons/no.png"
+      }
     }
   },
   componentWillMount() {
-    placeholder = {}
+    var placeholder = {};
 
     if (typeof this.props.placeholder !== undefined && this.props.placeholder !== null) {
       ["truthy", "falsy", "actual_placeholder"].map((field) => {
@@ -22,28 +20,13 @@ window.Card = React.createClass({
       }
     }
   },
-  componentWillReceiveProps (nextProps){
-    this.setState({
-      selected: "",
-      actual_placeholder: this.state.placeholder.falsy
-    })
-  },
   handleClick() {
-    if (this.state.selected == "")
-      this.setState({
-        selected: "selected",
-        actual_placeholder: this.state.placeholder.truthy
-      })
-    else
-      this.setState({
-        selected: "",
-        actual_placeholder: this.state.placeholder.falsy
-      })
+    this.props.updateElement(this.props.id);
   },
   render() {
-    return <div className={"card " + this.state.selected} onClick={this.handleClick}>
+    return <div className={"card " + this.props.classes} onClick={this.handleClick}>
       <div className="card-image">
-        <img src={this.state.actual_placeholder} alt= ""></img>
+        <img src={this.state.placeholder[this.props.active]} alt= ""></img>
       </div>
       <h4>{this.props.title}</h4>
       <p>

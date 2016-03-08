@@ -8,13 +8,13 @@ window.Cards = React.createClass
     @filter = @props.filter if @props.filter?
 
     if typeof @props.urlApi == 'object'
-      @setState items: @props.urlApi
+      @setState items: @props.elements.urlApi
     else
-      $.getJSON(@props.urlApi)
+      $.getJSON(@props.elements.urlApi)
         .done (data) =>
           @setState items: data.filter(@filter)
         .fail (err) ->
-          console.log "error #{err}"
+          console.log "error #{JSON.stringify err}"
 
     true
 
@@ -22,14 +22,14 @@ window.Cards = React.createClass
     @state.items = []
     @filter = nextProps.filter if nextProps.filter?
 
-    if typeof nextProps.urlApi == 'object'
-      @setState items: nextProps.urlApi
+    if typeof nextProps.elements.urlApi == 'object'
+      @setState items: nextProps.elements.urlApi
     else
-      $.getJSON(nextProps.urlApi)
+      $.getJSON(nextProps.elements.urlApi)
         .done (data) =>
           @setState items: data.filter(@filter)
         .fail (err) ->
-          console.log "error #{err}"
+          console.log "error #{JSON.stringify err}"
     true
 
   render: () ->
@@ -37,6 +37,8 @@ window.Cards = React.createClass
       React.createElement window.Card,
         title: item.title,
         description: item.description,
+        classes: if index == @props.activeElement then "selected" else ""
+        active: index == @props.activelement
         id: index
-
+        updateElement: this.props.updateElement
     React.createElement "div", className: "cards", cards
