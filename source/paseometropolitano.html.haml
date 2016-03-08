@@ -1,15 +1,25 @@
 ---
 title: Paseo Metropolitano 2016
+layout: event
+
 ---
+.scroll-on-page
+  .container
+    %ul
+      %li
+        %a.scroll-on-page-link{:href => "#que-es"} Qué es Paseo Metropolitano
+      %li
+        %a.scroll-on-page-link{:href => "#ruta"} Ruta
+      %li
+        %a.scroll-on-page-link{:href => "#staff"} Staff
+      %li
+        %a.scroll-on-page-link{:href => "#normas"} Normas
 
 .event-page
   %section.banner-event
     .container
       =image_tag 'eventos/paseo-metropolitano.png'
-      .submit-section
-        = link_to data.links.paseo_metropolitano, target: '_blank' do
-          %button Registrarme →
-  %section.abstract
+  %section.abstract#que-es
     .container
       .text-center
         %h1 ¿Qué es Paseo Metropolitano?
@@ -19,13 +29,33 @@ title: Paseo Metropolitano 2016
           Es un esfuerzo conjunto entre organizaciones de la sociedad civil, universidades y gobiernos locales para promover una visión metropolitana e integral de las vías recreativas, y para identificar retos y oportunidades de proyectos de movilidad más amplios.
   %section.content
     .container
-      %h3 Ruta
+      %h3#ruta Ruta
       .image
         = link_to image_tag('eventos/paseo-metropolitano-ruta.png'), image_path('eventos/paseo-metropolitano-ruta.png'), target: '_blank'
 
       %hr
 
-      %h3 Normas de Convivencia
+      %h3#staff Staff
+      %p En ésta segunda edición del Paseo Metropolitano esperamos contar con cientos de voluntarios que formen parte del STAFF, los cuales estarán ubicados en diferentes zonas de la ruta acompañando y apoyando a los asistentes.
+      %h4 La experiencia del STAFF consistirá en:
+      %ul
+        %li Apoyar a los asistentes.
+        %li Orientar y asesorar a los asistentes brindando información.
+        %li Fortalecer la organización y operación del evento.
+        %li Disfrutar del evento.
+      %h4 ¿Quién puede ser voluntario?
+      %p Cualquier persona que desee participar de modo responsable y desinteresado y esté dispuesta a dedicar parte de su tiempo libre a los paseantes.
+      %ul
+        %li Ser mayor de 16 años.
+        %li Estar disponible el día 10 de abril de 2016.
+      %h4 ¿Cómo participar?
+      %p ¡Únete a nuestra STAFF para ayudarnos a hacer de este Paseo Metropolitano un éxito!
+      .action
+        = link_to 'http://bit.ly/1OIkW42', target: '_blank' do
+          %button Quiero sumarme al Staff →
+      %hr
+
+      %h3#normas Normas de Convivencia
       %h4 Asistentes
       %ol
         %li Dentro de la ruta no se permiten ningún vehículo de motor (ej. Motocicletas, autos, etc).
@@ -54,26 +84,6 @@ title: Paseo Metropolitano 2016
         %li Toda la publicidad y participación dentro del evento tendrá que ser coordinada por el municipio correspondiente.
         %li Queda estrictamente prohibido la repartición de folletos, panfletos, trípticos o material de papel.
 
-      %hr
-
-      %h3 Staff
-      %p En ésta segunda edición del Paseo Metropolitano esperamos contar con cientos de voluntarios que formen parte del STAFF, los cuales estarán ubicados en diferentes zonas de la ruta acompañando y apoyando a los asistentes.
-      %h4 La experiencia del STAFF consistirá en:
-      %ul
-        %li Apoyar a los asistentes.
-        %li Orientar y asesorar a los asistentes brindando información.
-        %li Fortalecer la organización y operación del evento.
-        %li Disfrutar del evento.
-      %h4 ¿Quién puede ser voluntario?
-      %p Cualquier persona que desee participar de modo responsable y desinteresado y esté dispuesta a dedicar parte de su tiempo libre a los paseantes.
-      %ul
-        %li Ser mayor de 16 años.
-        %li Estar disponible el día 10 de abril de 2016.
-      %h4 ¿Cómo participar?
-      %p
-        Registrarse en
-        =link_to 'como staff', data.links.paseo_metropolitano
-      %p ¡Únete a nuestra STAFF para ayudarnos a hacer de este Paseo Metropolitano un éxito!
 
 
 
