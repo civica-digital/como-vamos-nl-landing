@@ -46,7 +46,7 @@ var Evaluate = React.createClass({
           <section className="survey-navbar">
             <Bar tema={ this.state.tema }
               disponible={ this.state.disponible }
-              modalidad={ this.state.modalidad } />,
+              modalidad={ this.state.modalidad } />
           </section>
         </section>
 
