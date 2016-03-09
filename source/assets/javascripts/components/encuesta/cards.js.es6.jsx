@@ -1,4 +1,4 @@
-window.Card = React.createClass({
+var Card = React.createClass({
   getInitialState () {
     return {
       placeholder: {
@@ -33,5 +33,24 @@ window.Card = React.createClass({
         {this.props.description}
       </p>
     </div>
+  }
+})
+
+
+var Cards = React.createClass({
+  filter() { return true; },
+  render() {
+    console.log(this.props.elements)
+    const cards = this.props.elements.map((item, index) =>
+      <Card
+        title={item.title}
+        description={item.description}
+        classes={index == this.props.activeElement ? "selected" : ""}
+        active={index == this.props.activelement}
+        key={index}
+        id={index}
+        updateElement={this.props.updateElement} />)
+
+    return <div className="cards">{ cards }</div>
   }
 })

@@ -1,6 +1,5 @@
-window.Button = React.createClass({
+const Button = React.createClass({
   render () {
-    
     return <button onClick={this.props.action}>{this.props.label}</button>
   }
 })

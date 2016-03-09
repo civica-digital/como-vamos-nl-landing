@@ -4,7 +4,10 @@
 //= require_tree ./utils
 //= require_tree ./data
 
-
+//= require components/encuesta/button
+//= require components/encuesta/cards
+//= require components/encuesta/stages
+//= require components/encuesta/survey
 
 //= require components/evalua/section-bar
 //= require components/evalua/project-group

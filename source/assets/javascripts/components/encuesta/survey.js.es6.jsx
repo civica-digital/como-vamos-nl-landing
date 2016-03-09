@@ -1,4 +1,4 @@
-window.Survey = React.createClass({
+const Survey = React.createClass({
   getInitialState () {
     return {
       active_stage: 0,
@@ -6,9 +6,25 @@ window.Survey = React.createClass({
     }
   },
   componentWillMount() {
-    stages = this.props.stages
-    stages[this.state.active_stage].active = true
-    this.state.stages = stages
+    $.getJSON("https://script.google.com/macros/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=ejes")
+      .done((data) =>
+        this.setState({
+          stages: [
+            {
+              title: "¿Qué tema te interesa?",
+              items: data,
+              label: "Avanzar " + String.fromCharCode(8594),
+              active: true
+            }, {
+              title: "¿Cuánto tiempo tienes disponible?",
+              items: stagesSurvey,
+              label: "Avanzar " + String.fromCharCode(8594)
+            }, {
+              title: "¿Cómo te gustaría ayudar?",
+              items: stagesModalidad,
+              label: "Comienza a participar " + String.fromCharCode(8594),
+            }
+          ]}));
   },
   manageButton(e) {
     new_stage = (this.state.active_stage + 1);
@@ -51,17 +67,24 @@ window.Survey = React.createClass({
   },
 
   render() {
-    const button = this.state.stages[this.state.active_stage]
-    button.action = this.manageButton;
+    if (!this.state.stages) return ( <section className="survey" /> );
+
+    const button = this.state.stages[this.state.active_stage];
 
     return <section className="survey">
-      <window.Stages stages={this.state.stages}></window.Stages>
-        <window.Cards elements={this.state.stages[this.state.active_stage]} activeElement={this.getSelectedForStage()} updateElement={this.updateResult}>
-        </window.Cards>
+      <Stages stages={this.state.stages} />
+      <Cards
+        elements={this.state.stages[this.state.active_stage].items}
+        activeElement={this.getSelectedForStage()}
+        updateElement={this.updateResult} />
 
         <div className="submit-section">
-          <window.Button label={button.label} action={this.manageButton}></window.Button>
+          <Button label={button.label} action={this.manageButton} />
         </div>
     </section>
   }
 });
+
+
+if (document.getElementById('survey'))
+  React.render(<Survey />, document.getElementById('survey'));
