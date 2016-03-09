@@ -1,10 +1,16 @@
 //= require jquery
 //= require react
-// require_tree ./components
+
+//= require_tree ./utils
+//= require_tree ./data
+
+
+
 //= require components/evalua/section-bar
 //= require components/evalua/project-group
 //= require components/evalua/organization-group
 //= require components/evalua/evaluate
+
 // require_tree .
 
 $(document).ready(() => {

@@ -7,7 +7,8 @@ var Project = React.createClass({
         </div>
         <div>
           <p>{ this.props.projectDescription }</p>
-          <button>Participar</button>
+          <img src='assets/images/icons/citizen.png'></img>
+          <button>Participa</button>
         </div>
       </div>
     );
@@ -20,7 +21,7 @@ var ProjectGroup = React.createClass({
       return (
         <Project
           key={ index }
-          projectName={ project.name }
+          projectName={ project.component }
           projectDescription={ project.description }
         />
       );

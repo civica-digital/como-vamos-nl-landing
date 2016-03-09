@@ -6,40 +6,73 @@ var Evaluate = React.createClass({
     };
   },
   componentDidMount: function() {
-    // aquí vamos a cargar los datos de forma dinámica
-    // basados en parámetros y llamadas a endpoints
-    // .ajax.done(self.setState({ projects: res.data.projects })).bind(this)
     var self = this;
-    this.setState({
-      projects: [
-        { name: '¿Qué es CVNL? 1', description: 'Cómo Vamos Nuevo León (CVNL) es una plataforma que tiene como objetivo incorporar una agenda' },
-        { name: '¿Qué es CVNL? 2', description: 'Cómo Vamos Nuevo León (CVNL) es una plataforma que tiene como objetivo incorporar una agenda' },
-        { name: '¿Qué es CVNL? 3', description: 'Cómo Vamos Nuevo León (CVNL) es una plataforma que tiene como objetivo incorporar una agenda' },
-        { name: '¿Qué es CVNL? 4', description: 'Cómo Vamos Nuevo León (CVNL) es una plataforma que tiene como objetivo incorporar una agenda' }
-      ],
-      organizations: [
-        { name: 'Academia Nacional de Arquitectura 1', image: 'assets/images/icons/citizen.png'},
-        { name: 'Academia Nacional de Arquitectura 2', image: 'assets/images/icons/citizen.png'}
-      ]
+
+    $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=organizations')
+      .done((data) => {
+        const orgs = data.filter((data) => {
+          return data.action_ids.indexOf(parseInt(getUrlVars()[0])) !== -1;
+        })
+        self.setState({organizations: orgs})
+    }).fail((e) => console.log("error " + e));
+
+    $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=components')
+      .done((data) => {
+        const projects = data.filter((element, index) => {
+          return element.id_accion == getUrlVars()[0];
+        });
+        self.setState({projects: projects})
     });
+
+    $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=ejes')
+      .done((data) => {
+        self.setState({
+          ejeTitle: data[getUrlVars()[0]].title,
+          tema: data[getUrlVars()[0]].title,
+          disponible: stagesSurvey[getUrlVars()[1]].title,
+          modalidad: stagesModalidad[getUrlVars()[2]].title
+        })
+      });
+
   },
   render: function() {
     return (
       <div>
         <section className="survey-navbar">
-          <Bar />
+          <section>
+            <h1>Comienza a evaluar tu municipio</h1>
+            <a  href="/">&larr; Vuelve a responder la encuesta</a>
+          </section>
+          <section className="survey-navbar">
+            <Bar tema={ this.state.tema }
+              disponible={ this.state.disponible }
+              modalidad={ this.state.modalidad } />,
+          </section>
+        </section>
+
+
+        <section className="tagline">
+          <br />
+          <br />
+          <p>Proyectos en los que puedes participar:</p>
         </section>
 
         <ProjectGroup
           projects={ this.state.projects }
         />
 
+        <section className="tagline">
+          <p>Organizaciones con las que puedes participar:</p>
+        </section>
+
         <OrganizationGroup
-          organizations={ this.state.organizations}
+          organizations={ this.state.organizations }
         />
       </div>
     );
   }
 });
 
-React.render(<Evaluate />, document.getElementById('evaluate-app'));
+if (document.getElementById('evaluate-app')) {
+  React.render(<Evaluate />, document.getElementById('evaluate-app'));
+}
