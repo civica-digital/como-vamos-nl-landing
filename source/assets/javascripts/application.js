@@ -1,13 +1,26 @@
 //= require jquery
 //= require react
-//= require_tree ./components
-//= require_tree .
 
-$(document).ready(function() {
+//= require_tree ./utils
+//= require_tree ./data
+
+//= require components/encuesta/button
+//= require components/encuesta/cards
+//= require components/encuesta/stages
+//= require components/encuesta/survey
+
+//= require components/evalua/section-bar
+//= require components/evalua/project-group
+//= require components/evalua/organization-group
+//= require components/evalua/evaluate
+
+// require_tree .
+
+$(document).ready(() => {
   var menuToggle = $('#js-mobile-menu').unbind();
   $('#js-navigation-menu').removeClass("show");
 
-  menuToggle.on('click', function(e) {
+  menuToggle.on('click', (e) => {
     e.preventDefault();
     $('#js-navigation-menu').slideToggle(function(){
       if($('#js-navigation-menu').is(':hidden')) {
@@ -19,7 +32,7 @@ $(document).ready(function() {
 });
 
 //scroll-menu
-  (function (jQuery) {
+(function (jQuery) {
     jQuery.mark = {
       jump: function (options) {
         var defaults = {
