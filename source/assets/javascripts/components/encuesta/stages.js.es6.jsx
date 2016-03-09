@@ -1,5 +1,9 @@
-const Stage =  React.createClass({
-  render(){
+class Stage extends  React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
     var decoration = [];
 
     if (this.props.active) {
@@ -25,13 +29,17 @@ const Stage =  React.createClass({
 
     </div>
   }
-})
+}
 
-window.Stages = React.createClass({
+class Stages extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   render() {
     stages = this.props.stages.map((stage, index) =>
       <Stage title={stage.title} key={index} active={ stage.active } />)
 
     return <div className="bars">{ stages }</div>
   }
-})
+}

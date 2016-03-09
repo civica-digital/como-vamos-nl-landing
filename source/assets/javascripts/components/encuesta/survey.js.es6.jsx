@@ -1,10 +1,12 @@
-const Survey = React.createClass({
-  getInitialState () {
-    return {
+class Survey extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
       active_stage: 0,
       results: []
     }
-  },
+  }
+
   componentWillMount() {
     $.getJSON("https://script.google.com/macros/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=ejes")
       .done((data) =>
@@ -25,7 +27,8 @@ const Survey = React.createClass({
               label: "Comienza a participar " + String.fromCharCode(8594),
             }
           ]}));
-  },
+  }
+
   manageButton(e) {
     new_stage = (this.state.active_stage + 1);
 
@@ -44,13 +47,15 @@ const Survey = React.createClass({
       window.location = 'evalua?'  + $.param(queryObj);
     }
 
-  },
+  }
+
   updateResult(index) {
     var new_results = this.state.results
     new_results[this.state.active_stage] = index;
     console.log("update results " + index);
     this.setState({results: new_results});
-  },
+  }
+
   getSelectedForStage() {
     if (typeof this.state.results[this.state.active_stage] !== "undefined" &&
     this.state.results[this.state.active_stage] !== null) {
@@ -58,13 +63,14 @@ const Survey = React.createClass({
     } else {
       return -1;
     }
-  },
+  }
+
   shouldComponentUpdate() {
     $('html, body').animate(
       {scrollTop: $(".survey").offset().top }, 800);
 
     return true;
-  },
+  }
 
   render() {
     if (!this.state.stages) return ( <section className="survey" /> );
@@ -76,14 +82,14 @@ const Survey = React.createClass({
       <Cards
         elements={this.state.stages[this.state.active_stage].items}
         activeElement={this.getSelectedForStage()}
-        updateElement={this.updateResult} />
+        updateElement={this.updateResult.bind(this)} />
 
         <div className="submit-section">
-          <Button label={button.label} action={this.manageButton} />
+          <Button label={button.label} action={this.manageButton.bind(this)} />
         </div>
     </section>
   }
-});
+}
 
 
 if (document.getElementById('survey'))
