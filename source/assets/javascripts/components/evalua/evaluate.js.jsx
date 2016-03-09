@@ -39,22 +39,22 @@ var Evaluate = React.createClass({
     return (
       <div>
         <section className="survey-navbar">
-          <section>
-            <h1>Comienza a evaluar tu municipio</h1>
-            <a  href="/">&larr; Vuelve a responder la encuesta</a>
-          </section>
-          <section className="survey-navbar">
+          <div className="container">
+            <header>
+              <h1>Comienza a evaluar tu municipio</h1>
+              <a  href="/">&larr; Vuelve a responder la encuesta</a>
+            </header>
             <Bar tema={ this.state.tema }
               disponible={ this.state.disponible }
               modalidad={ this.state.modalidad } />
-          </section>
+          </div>
         </section>
 
 
         <section className="tagline">
-          <br />
-          <br />
-          <p>Proyectos en los que puedes participar:</p>
+          <div className="container">
+            <p>Proyectos en los que puedes participar:</p>
+          </div>
         </section>
 
         <ProjectGroup
@@ -62,7 +62,9 @@ var Evaluate = React.createClass({
         />
 
         <section className="tagline">
-          <p>Organizaciones con las que puedes participar:</p>
+          <div className="container">
+            <p>Organizaciones con las que puedes participar:</p>
+          </div>
         </section>
 
         <OrganizationGroup
