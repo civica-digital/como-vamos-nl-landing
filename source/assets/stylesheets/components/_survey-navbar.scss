@@ -1,60 +1,61 @@
-$navbar-background-1: #005BBB;
-$navbar-background-2: #1769C0;
-$navbar-background-3: #2B75C4;
+$navbar-background-1: $blue;
+$navbar-background-2: lighten($blue, 5%);
+$navbar-background-3: lighten($blue, 10%);
 $navbar-background: $light-gray;
 
-section.survey-navbar{
+.survey-navbar{
   background-color: $navbar-background;
-  section:first-child{
-    @include outer-container;
-    @include clearfix;
-    display: block;
-    padding-bottom: 16px;
-    padding-top: 36px;
+  header{
+    @extend .p-t-lg;
+    @extend .p-b-md;
     h1{
-      font-size: 26px;
+    font-size: 32px;
     }
   }
-  div.bar{
-    @include outer-container;
-    @include clearfix;
-    color: white;
-    background-color: $navbar-background-2;
-    height: 70px;
+}
+.bar{
+  color: white;
+  @include fill-parent();
+  @include row(table);
 
-    div > img{
-      height: 70px;
-      float:left;
+  div{
+    @include span-columns(4);
+    min-height: 70px;
+    background-color: $navbar-background-2;
+    margin-right: 0;
+
+    @include media(min-width 320px max-width 779px) {
+      width: 100%; display: block;
+      label, p{padding-left: 80px;}
     }
-     > div{
-      @include omega(3n);
-      @include span-columns(4);
-      height: 70px;
+
+    img{
       float: left;
-      background-color: $navbar-background-2;
-      padding: 18px 20px;
-      label{
-        margin-bottom: 0px;
-        font-size: 12px;
-      }
-      > p{
-        font-size: 14px;
-        text-transform: uppercase;
-      }
+      width: 70px;
+      @extend .m-r;
     }
-    div:first-child{
+
+    label{
+      margin-bottom: 0px;
+      font-size: 13px;
+      @extend .p-t;
+      @extend .p-l;
+      @extend .p-r;
+
+    }
+    p{
+      font-size: 14px;
+      text-transform: uppercase;
+      @extend .p-b;
+      @extend .p-l;
+      @extend .p-r;
+    }
+    &:first-child{
       background-color: $navbar-background-1;
-      padding-top: 0;
-      padding-left: 0;
-      > label{
-        padding-top: 18px;
-      }
-      :not(img) {
-        padding-left: 88px;
-      }
     }
-    div:last-child{
+    &:last-child{
       background-color: $navbar-background-3;
     }
   }
 }
+
