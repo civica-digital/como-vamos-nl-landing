@@ -49,6 +49,7 @@ $(document).ready(() => {
     }
   ];
 
+if (document.getElementById('survey'))
   React.render(React.createElement(window.Survey, {stages: stages}),
     document.getElementById('survey'));
 })

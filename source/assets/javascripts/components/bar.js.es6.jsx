@@ -1,10 +1,9 @@
-window.bar = React.createClass({
+const Bar = React.createClass({
   render() {
-    return <div>
-      <img src='ejes/desarrollo.png'></img>
-      <window.section_bar description='Seguridad y Justicia' title='Tema'></window.section_bar>
-      <window.section_bar description='2 horas' title='Disponibilidad'></window.section_bar>
-      <window.section_bar description='Asistiendo a algún evento o espacio' title='Modalidad'></window.section_bar>
+    return <div className="bar">
+      <SectionBar img='assets/images/ejes/desarrollo.png' description='Seguridad y Justicia' title='Tema'></SectionBar>
+      <SectionBar description='2 horas' title='Disponibilidad'></SectionBar>
+      <SectionBar description='Asistiendo a algún evento o espacio' title='Modalidad'></SectionBar>
     </div>
   }
 })
