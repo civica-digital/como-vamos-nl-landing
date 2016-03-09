@@ -16,7 +16,7 @@ var Bar = React.createClass({
     return <div className="bar">
       <SectionBar
           img={ this.props.image ?
-            this.props.image : "assets/images/ejes/desarrollo.png" }
+            this.props.image : "../assets/images/ejes/desarrollo.png" }
           description={ this.props.tema }
           title='Tema' />
       <SectionBar description={this.props.disponible} title='Disponibilidad' />

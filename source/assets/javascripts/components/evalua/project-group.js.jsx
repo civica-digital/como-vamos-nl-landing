@@ -7,7 +7,7 @@ var Project = React.createClass({
         </div>
         <div>
           <p>{ this.props.projectDescription }</p>
-          <img src='assets/images/icons/citizen.png'></img>
+          <img src='../assets/images/icons/citizen.png'></img>
           <button>Participa</button>
         </div>
       </div>
