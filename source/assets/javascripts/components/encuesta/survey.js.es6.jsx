@@ -65,13 +65,6 @@ class Survey extends React.Component {
     }
   }
 
-  shouldComponentUpdate() {
-    $('html, body').animate(
-      {scrollTop: $(".survey").offset().top }, 800);
-
-    return true;
-  }
-
   render() {
     if (!this.state.stages) return ( <section className="survey" /> );
 

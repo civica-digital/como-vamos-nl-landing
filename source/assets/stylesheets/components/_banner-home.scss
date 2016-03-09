@@ -3,11 +3,11 @@ section.banner-home{
   height: 500px;
   width: 100%;
   overflow: hidden;
-  background:  url(/assets/images/illustrations/bg-banner.png) 0 440px repeat-x;
+  background:  url(../images/illustrations/bg-banner.png) 0 440px repeat-x;
   background-size: 1px;
   @include media(min-width 320px max-width 779px) {
     height: 400px;
-    background:  url(/assets/images/illustrations/bg-banner.png) 0 340px repeat-x;
+    background:  url(../images/illustrations/bg-banner.png) 0 340px repeat-x;
   }
   .box{
 
@@ -50,9 +50,9 @@ section.banner-home{
   }
 
   .container{
-    background: url(/assets/images/illustrations/bg-banner-container.png) left top no-repeat;
+    background: url(../images/illustrations/bg-banner-container.png) left top no-repeat;
     @include media(min-width 320px max-width 779px) {
-      background: url(/assets/images/illustrations/bg-banner-container.png) left -100px no-repeat;
+      background: url(../images/illustrations/bg-banner-container.png) left -100px no-repeat;
     }
   }
 }
