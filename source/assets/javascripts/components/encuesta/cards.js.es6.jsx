@@ -1,24 +1,10 @@
 class Card extends React.Component {
   constructor(props) {
     super(props)
-    console.log("props " + JSON.stringify(props))
     this.state = {
       placeholder: {
         true: "assets/images/icons/yes.png",
         false: "assets/images/icons/no.png"
-      }
-    }
-  }
-  componentWillMount() {
-    var placeholder = {};
-
-    if (typeof this.props.placeholder !== undefined && this.props.placeholder !== null) {
-      ["truthy", "falsy", "actual_placeholder"].map((field) => {
-        if (typeof this.props.placeholder !== 'undefined' && this.props.placeholder[field] !== null)
-          placeholder[field] = this.props.placeholder[field]
-        })
-      if(Object.keys(placeholder).length != 0){
-        this.placeholder = placeholder
       }
     }
   }
@@ -51,7 +37,6 @@ class Cards extends  React.Component {
   filter() { return true; }
 
   render() {
-    console.log(this.props.elements.updateElement)
     const cards = this.props.elements.map((item, index) =>
       <Card
         title={item.title}
