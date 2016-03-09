@@ -1,0 +1,11 @@
+.event-page{
+  position: relative;
+  top:130px;
+  padding-bottom: 130px;
+  .anchor:before {
+    display: block;
+    content: "";
+    height: 160px;
+    margin: -160px 0 0;
+  }
+}

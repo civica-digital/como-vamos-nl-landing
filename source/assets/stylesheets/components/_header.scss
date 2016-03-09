@@ -259,4 +259,9 @@ header.navigation {
       float: right;
     }
   }
+
+  // Events Header Fixed
+  &.event{
+    position: fixed;
+  }
 }
