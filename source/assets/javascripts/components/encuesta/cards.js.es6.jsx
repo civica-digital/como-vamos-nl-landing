@@ -1,12 +1,6 @@
 class Card extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      placeholder: {
-        true: "assets/images/icons/yes.png",
-        false: "assets/images/icons/no.png"
-      }
-    }
   }
 
   handleClick() {
@@ -14,10 +8,12 @@ class Card extends React.Component {
   }
 
   render() {
+    var placeholderPath = 'assets/images/icons/';
+    var placeholder = placeholderPath + (this.props.active ? 'yes.png' : 'no.png');
 
     return <div className={"card " + this.props.classes} onClick={this.handleClick.bind(this)}>
       <div className="card-image">
-        <img src={this.state.placeholder[this.props.active]} alt= ""></img>
+        <img src={ placeholder } alt= ""></img>
       </div>
       <h4>{this.props.title}</h4>
       <p>
@@ -42,7 +38,7 @@ class Cards extends  React.Component {
         title={item.title}
         description={item.description}
         classes={index == this.props.activeElement ? "selected" : ""}
-        active={index == this.props.activelement}
+        active={index == this.props.activeElement}
         key={index}
         id={index}
         updateElement={this.props.updateElement} />)

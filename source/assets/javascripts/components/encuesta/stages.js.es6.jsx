@@ -16,14 +16,15 @@ class Stage extends  React.Component {
       decoration[1] = <div className="circle" />
     }
 
-
+    // concat classes depending con props info
+    var stageNameClasses = 'stage-name' + (this.props.active ? ' active' : '');
 
     return <div className="stage">
       <div className="stage-progress" >
          {decoration}
       </div>
 
-      <div className="stage-name">
+      <div className={ stageNameClasses }>
         { this.props.title }
       </div>
 
