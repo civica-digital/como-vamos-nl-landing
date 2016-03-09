@@ -1,7 +1,11 @@
 //= require jquery
 //= require react
-//= require_tree ./components
-//= require_tree .
+// require_tree ./components
+//= require components/evalua/section-bar
+//= require components/evalua/project-group
+//= require components/evalua/organization-group
+//= require components/evalua/evaluate
+// require_tree .
 
 $(document).ready(() => {
   var menuToggle = $('#js-mobile-menu').unbind();
@@ -18,7 +22,7 @@ $(document).ready(() => {
 
 });
 
-//scroll-menu  
+//scroll-menu
 (function (jQuery) {
     jQuery.mark = {
       jump: function (options) {
