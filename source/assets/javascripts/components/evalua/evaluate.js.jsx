@@ -41,8 +41,8 @@ var Evaluate = React.createClass({
         <section className="survey-navbar">
           <div className="container">
             <header>
-              <h1>Comienza a evaluar tu municipio</h1>
-              <a  href="/">&larr; Vuelve a responder la encuesta</a>
+              <h1>Comienza a participar</h1>
+              <a  href="../">&larr; Vuelve a responder la encuesta</a>
             </header>
             <Bar tema={ this.state.tema }
               disponible={ this.state.disponible }
