@@ -1,13 +1,12 @@
 var Project = React.createClass({
   render: function() {
     return (
-      <div>
-        <div>
-          <p>{ this.props.projectName }</p>
-        </div>
-        <div>
+      <div className="project">
+        <header>
+          <h4>{ this.props.projectName }</h4>
+        </header>
+        <div className="project-body">
           <p>{ this.props.projectDescription }</p>
-          <img src='../assets/images/icons/citizen.png'></img>
           <button>Participa</button>
         </div>
       </div>
@@ -28,8 +27,10 @@ var ProjectGroup = React.createClass({
     });
 
     return (
-      <section className="proyectos">
-        { projects }
+      <section className="projects">
+        <div className="container">
+          { projects }
+        </div>
       </section>
     );
   }
