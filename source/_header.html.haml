@@ -2,7 +2,7 @@
   .navigation-wrapper
     .container
       .logo.pull-left
-        = link_to './' do
+        = link_to '../' do
           = image_tag 'logos/cvnl.png'
       %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
       %nav{:role => "navigation"}
@@ -11,7 +11,8 @@
       .navigation-tools
         %ul
           %li.nav-link
-            %a{:href => "javascript:void(0)"} Paseo Metropolitano
+            = link_to "Paseo Metropolitano", 'paseometropolitano'
+
       / .navigation-tools
       /   %ul
       /     %li.nav-link.more
