@@ -1,45 +1,62 @@
-$tagline-color: #788285;
-$image-border-color: #9C9DAB;
-$title-background-color: $medium-gray;
 
 section.tagline{
   @include clearfix;
   @include outer-container;
   padding: 20px 0;
   font-weight: bold;
-  color:$tagline-color;
+  color:$medium-gray;
+  @extend .m-t-md;
 }
 
-section.organizaciones{
-  @include clearfix;
+section.organizations{
   @include outer-container;
-  padding-bottom: 65px;
-  > div{
-     @include omega(6n);
-     float: left;
-     display: block;
-     width: 15.8%;
-     margin-right: 1%;
-     margin-bottom: 1%;
-     > div > img {
-       min-height:190px;
-       display: table-cell;
-       position: relative;
-       margin:auto;
-     }
-     > div > p{
-      font-size: 14px;
-      color: white;
+  display: block;
+
+  .organization{
+    @include span-columns(2);
+    @include omega(6n);
+    @include pad(0 10px 10px 0);
+    display: inline-block;
+
+    @include media(min-width 780px max-width 1199px) {
+      @include span-columns(3);
+      @include omega(4n);
+      display: inline-block;
+    }
+    @include media(min-width 480px max-width 779px) {
+      @include span-columns(4);
+      @include omega(3n);
+      display: inline-block;
+    }
+    @include media(min-width 320px max-width 479px) {
+      @include span-columns(6);
+      @include omega(2n);
+      display: inline-block;
+    }
+
+    .organization-image{
+      border: 1px solid $light-gray;
       text-align: center;
-      line-height: 1em;
-      padding: 8px 26px;
-     }
-     > div:nth-child(1){
-       border:1px solid $image-border-color;
-       min-height: 190px;
-     }
-     > div:nth-child(2){
-      background-color: $title-background-color;
-     }
+      img{
+        text-align: center;
+      }
+    }
+    .organization-name{
+      background-color: $medium-gray;
+      height: 50px;
+      position: relative;
+      p{
+        color: white;
+        @extend .p-xs;
+        position: absolute;
+        width:100%;
+        text-align: center;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        font-size: .9em;
+        line-height: 1em;
+      }
+    }
   }
 }
