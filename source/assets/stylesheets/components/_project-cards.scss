@@ -1,78 +1,98 @@
-$title-background-hover: #0058BE;
-$body-background-hover: #5695D3;
-$button-color-hover: $light-green;
-$text-color-hover: white;
-$title-background: #D1D9E1;
-$body-background: #DCE2E8;
+// $title-background-hover: $blue;
+// $body-background-hover: $light-blue;
+// $button-color-hover: $light-green;
+// $text-color-hover: white;
+// $title-background: darken($light-gray, 5%);
+// $body-background: $light-gray;
 
 
-section.proyectos{
+section.projects{
   @include clearfix;
   @include outer-container;
-  padding-bottom: 65px;
-  div.active, div:hover{
-    color: $text-color-hover;
-    >div:nth-child(1){
-      background-color:$title-background-hover;
-      p{
-        color: $text-color-hover;
+  display: block;
+
+  .project{
+    @include span-columns(3);
+    @include omega(4n);
+    @include pad(0 10px 10px 0);
+    display: inline-block;
+    vertical-align: top;
+
+    @include media(min-width 780px max-width 1199px) {
+      @include span-columns(4);
+      @include omega(3n);
+      display: inline-block;
+    }
+    @include media(min-width 480px max-width 779px) {
+      @include span-columns(6);
+      @include omega(2n);
+      display: inline-block;
+    }
+    @include media(min-width 320px max-width 479px) {
+      @include span-columns(12);
+      @include pad(0 0 10px 0);
+      display: inline-block;
+    }
+    header{
+      background-color: darken($light-gray, 5%);
+      height: 80px;
+      position: relative;
+      transition: background-color 0.5s ease;
+
+      h4{
+        @extend .p-md;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
-    >div:nth-child(2){
-      background-color: $body-background-hover;
+    .project-body{
+      background-color: $light-gray;
+      height: 260px;
+      @extend .p-md;
+      transition: background-color 0.5s ease;
+
       p{
-        color: $text-color-hover;
+        text-align: center;
+        text-overflow: ellipsis;
+        height: 140px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
       }
-    }
-    button{
-      background-color: $button-color-hover;
-      color: $text-color-hover;
-    }
-  }
-  > div{
-     @include omega(4n);
-     @include span-columns(3);
-     width: 24.4%;
-     margin-right: 0.71%;
-     margin-bottom: 0.71%;
-     h1, p{
-       font-size: 16px;
-     }
-     div:nth-child(1){
-       background-color: $title-background;
-     }
-     >div:nth-child(2){
-      min-height: 170px;
-     }
-     >div{
-      background-color: $body-background;
-      overflow: hidden;
-      padding: 16px 16px;
-      text-align: center;
-      img{
-        width: 30px;
-        display: block;
+      button{
+        @extend .m-t-md;
+        height: 35px;
+        padding: 2px 15px;
+        display:block;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: -6px;
+        background-color: $light-green;
+        color:#fff;
       }
-     }
-     div:first-child > p{
-       color: #253134;
-       padding: 14px 0px;
-       font-weight: bold;
-       text-align: center;
-     }
-     div:nth-child(2) > p{
-      padding-top: 8px;
-      padding-bottom: 8px;
-     }
-     button{
-       height: 35px;
-       padding: 2px 15px;
-       display:block;
-       margin-left: auto;
-       margin-right: auto;
-     }
+    }
+    &:hover{
+      header{
+        background-color: $blue;
+        transition: background-color 0.5s ease;
+        color:#fff;
+      }
+      .project-body{
+        background-color: $light-blue;
+        transition: background-color 0.5s ease;
+        p{
+          color:#fff;
+        }
+      }
+      .button{
+        background-color: #fff;
+        color: $light-green;
+
+      }
+    }
   }
 }

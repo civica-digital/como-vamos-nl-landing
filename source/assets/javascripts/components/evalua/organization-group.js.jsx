@@ -1,11 +1,11 @@
 var Organization = React.createClass({
   render: function() {
     return (
-      <div>
-        <div>
+      <div className="organization">
+        <div className="organization-image">
           <img src={this.props.organizationImage }/>
         </div>
-        <div>
+        <div className="organization-name">
           <p>{ this.props.organizationName }</p>
         </div>
       </div>
@@ -21,14 +21,16 @@ var OrganizationGroup = React.createClass({
           key={ index }
           organizationName={ organization.organization_name }
           organizationImage={ organization.image ?
-              organization.image : "../assets/images/icons/citizen.png" }
+              organization.image : "../assets/images/icons/organization.png" }
         />
       );
     });
 
     return (
-      <section className='organizaciones'>
-        { organizations }
+      <section className='organizations'>
+        <div className='container'>
+          { organizations }
+        </div>
       </section>
     );
   }
