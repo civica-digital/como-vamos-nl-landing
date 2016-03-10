@@ -1,0 +1,19 @@
+events:
+  - title: 'Paseo Metropolitano 2016'
+    submenu:
+      - label: '¿Qué es?'
+        link : '#que-es'
+      - label: 'Ruta'
+        link : '#ruta'
+      - label: 'Staff'
+        link : '#staff'
+      - label: 'Normas'
+        link : '#normas'
+    cover_image: 'eventos/paseo-metropolitano.png'
+    description_header: '¿Qué es Paseo Metropolitano?'
+    description_p1: 'Un evento para toda la familia que consiste en una ruta que integra las vías recreativas de varios
+      municipios del Área Metropolitana de Monterrey. Es el segundo año que se realiza este gran paseo que incluye actividades
+      recreativas, se puede recorrer a pie, bicicleta, patines, triciclo, monociclo, en fin, en cualquier forma de movilidad sustentable.'
+    description_p2: 'Es un esfuerzo conjunto entre organizaciones de la sociedad civil, universidades y gobiernos locales para
+      promover una visión metropolitana e integral de las vías recreativas, y para identificar retos y oportunidades de proyectos
+      de movilidad más amplios.'
