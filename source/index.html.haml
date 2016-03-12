@@ -5,6 +5,14 @@ layout: application
 ---
 
 .home-page
+  %section.flash-notice
+    .container
+      =link_to '../paseometropolitano' do
+        .icon
+          = image_tag('icons/bici.png')
+        %p
+          <strong>PASEO METROPOLITANO</strong>. El próximo 2 de abril será la 2da edición. <strong>¡Conoce los Detalles!</strong>
+
   %section.banner-home
     .container
       .box.alcalde.text-center.inline-block

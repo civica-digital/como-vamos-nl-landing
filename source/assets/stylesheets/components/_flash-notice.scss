@@ -1,0 +1,21 @@
+.flash-notice{
+	background-color: $yellow;
+	@extend .p-xs;
+	a{
+    .icon{
+      float: left; margin-right: 10px;
+      img{max-height: 26px;}
+    }
+		p{
+      @extend .p-xs;
+			color:$dark-gray;
+      opacity: .8;
+			strong{font-family: 'DinnBold', sans-serif;}
+		}
+    &:hover{
+      p{
+        opacity: 1;
+      }
+    }
+	}
+}

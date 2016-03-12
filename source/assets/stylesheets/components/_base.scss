@@ -13,6 +13,7 @@
 @import "event-scroll-menu";
 @import "event-page";
 @import "header-alcalde";
+@import "flash-notice";
 
 .container{
   @include media(min-width 960px max-width 1199px) {
