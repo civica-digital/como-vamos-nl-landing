@@ -12,6 +12,7 @@
 @import "image-cards";
 @import "event-scroll-menu";
 @import "event-page";
+@import "header-alcalde";
 
 .container{
   @include media(min-width 960px max-width 1199px) {

@@ -1,0 +1,22 @@
+%header.navigation.acv{:role => "banner"}
+  .navigation-wrapper
+    .container
+      .logo
+        = image_tag 'logos/acv-header.png'
+      %nav
+        %ul
+          %li.nav-link= link_to '¿Qué es Alcalde: Cómo Vamos?', '../que-es'
+
+  .submenu
+    .container
+      %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
+      %nav{:role => "navigation"}
+        %ul#js-navigation-menu.navigation-menu.show
+          %li.nav-link= link_to 'Inicio', '#', class: 'active'
+          / %li.nav-link= link_to 'Plataforma', '#'
+          / %li.nav-link= link_to 'Las 11 acciones', '#'
+          / %li.nav-link= link_to 'Avances', '#'
+          / %li.nav-link= link_to 'Reuniones', '#'
+          / %li.nav-link= link_to 'Eventos', '#'
+          / %li.nav-link= link_to 'Informe anual', '#'
+          / %li.nav-link= link_to 'Línea de tiempo', '#'
