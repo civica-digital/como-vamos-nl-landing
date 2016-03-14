@@ -28,5 +28,11 @@
         line-height: 1.4em;
       }
     }
+    .video{
+      @extend .m-t-xl;
+      @extend .m-l-xl;
+      @extend .m-r-xl;
+
+    }
   }
 }
