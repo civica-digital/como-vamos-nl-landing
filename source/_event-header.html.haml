@@ -2,9 +2,9 @@
   .navigation-wrapper
     .container
       .logo.pull-left
-        = link_to "#{domain}/" do
+        = link_to "/" do
           = image_tag 'logos/cvnl.png'
       %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
       %nav{:role => "navigation"}
         %ul#js-navigation-menu.navigation-menu.show
-          %li.nav-link= link_to 'Cómo Vamos, Nuevo León', "#{domain}"
+          %li.nav-link= link_to 'Cómo Vamos, Nuevo León', "/"
