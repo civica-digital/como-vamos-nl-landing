@@ -10,7 +10,6 @@ set :css_dir, "assets/stylesheets"
 set :js_dir, "assets/javascripts"
 set :images_dir, "assets/images"
 set :fonts_dir, "assets/fonts"
-set :domain, "/"
 #set :layout, "layouts/application"
 
 page '/*.xml', layout: false
@@ -25,7 +24,6 @@ end
 
 configure :build do
   activate :relative_assets
-  set :domain, "/como-vamos-nl-landing/"
 end
 
 activate :deploy do |deploy|
