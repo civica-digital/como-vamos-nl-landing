@@ -7,6 +7,7 @@ layout: event
   .container
     =link_to '¿Qué es?', '#que-es', class: 'scroll-on-page-link'
     =link_to 'Ruta', '#ruta', class: 'scroll-on-page-link'
+    =link_to 'Recorridos', '#paseos', class: 'scroll-on-page-link'
     =link_to 'Staff', '#staff', class: 'scroll-on-page-link'
     =link_to 'Normas', '#normas', class: 'scroll-on-page-link'
 
@@ -14,6 +15,7 @@ layout: event
   %section.banner-event
     .container
       =image_tag 'eventos/paseo-metropolitano.png'
+
   %section.abstract#que-es.anchor
     .container
       .abstract-content
@@ -32,7 +34,7 @@ layout: event
       .image
         = link_to image_tag('eventos/paseo-metropolitano-ruta.png'), image_path('eventos/paseo-metropolitano-ruta.png'), target: '_blank'
 
-      %h3.text-center Paseos Cortos
+      %h3#paseos.anchor.text-center Paseos Cortos
       .col3-grid
         .col
           .modal
@@ -68,7 +70,7 @@ layout: event
                 .image-container
                   =image_tag 'eventos/paseo-metropolitano-la-purisima.png'
 
-      %h3.text-center Rutas profesionales
+      %h3.text-center Rutas Deportivas
       .col3-grid
         .col
           .modal
