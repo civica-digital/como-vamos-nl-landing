@@ -1,0 +1,7 @@
+.col3-grid{
+  @include outer-container;
+  @extend .m-t-lg;
+  .col{
+    @include span-columns(4);
+  }
+}

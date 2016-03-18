@@ -28,9 +28,45 @@ layout: event
 
   %section.content
     .container
-      %h3#ruta.anchor Ruta
+      %h3#ruta.anchor.text-center Ruta
       .image
         = link_to image_tag('eventos/paseo-metropolitano-ruta.png'), image_path('eventos/paseo-metropolitano-ruta.png'), target: '_blank'
+
+      %h3.text-center Paseos Cortos
+      .col3-grid
+        .col
+          .modal
+            %label.modal-js{:for => "fuentes-del-valle"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-fuentes-del-valle-sm.png'
+            %input#fuentes-del-valle.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "la-purisima"}
+                .modal-container.text-center
+                  =image_tag 'eventos/paseo-metropolitano-fuentes-del-valle.png'
+        .col
+          .modal
+            %label.modal-js{:for => "la-pastora"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-la-pastora-sm.png'
+            %input#la-pastora.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "la-purisima"}
+                .modal-container.text-center
+                  =image_tag 'eventos/paseo-metropolitano-la-pastora.png'
+        .col
+          .modal
+            %label.modal-js{:for => "la-purisima"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-la-purisima-sm.png'
+            %input#la-purisima.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "la-purisima"}
+                .modal-container.text-center
+                  =image_tag 'eventos/paseo-metropolitano-la-purisima.png'
 
       %hr
 
