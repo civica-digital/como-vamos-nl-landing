@@ -7,7 +7,7 @@
     @include clearfix;
     @extend .p-b-xl;
     @extend .p-t-xl;
-    background-color: $light-gray;
+    background-color: lighten($light-gray, 5%);
     text-align: center;
 
     border-bottom: 1px dashed $light-gray;
@@ -29,9 +29,12 @@
       }
     }
     .video{
-      @extend .m-t-xl;
-      @extend .m-l-xl;
-      @extend .m-r-xl;
+      margin-left: auto;
+      margin-right: auto;
+      @extend .m-t-lg;
+      @extend .m-b-lg;
+      max-width: 600px;
+      border: 5px solid $dark-gray;
 
     }
   }
