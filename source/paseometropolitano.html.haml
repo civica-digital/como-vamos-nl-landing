@@ -28,9 +28,81 @@ layout: event
 
   %section.content
     .container
-      %h3#ruta.anchor Ruta
+      %h3#ruta.anchor.text-center Ruta
       .image
         = link_to image_tag('eventos/paseo-metropolitano-ruta.png'), image_path('eventos/paseo-metropolitano-ruta.png'), target: '_blank'
+
+      %h3.text-center Paseos Cortos
+      .col3-grid
+        .col
+          .modal
+            %label.modal-js{:for => "fuentes-del-valle"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-fuentes-del-valle-sm.png'
+            %input#fuentes-del-valle.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "fuentes-del-valle"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-fuentes-del-valle.png'
+        .col
+          .modal
+            %label.modal-js{:for => "la-pastora"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-la-pastora-sm.png'
+            %input#la-pastora.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "la-pastora"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-la-pastora.png'
+        .col
+          .modal
+            %label.modal-js{:for => "la-purisima"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-la-purisima-sm.png'
+            %input#la-purisima.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "la-purisima"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-la-purisima.png'
+
+      %h3.text-center Rutas profesionales
+      .col3-grid
+        .col
+          .modal
+            %label.modal-js{:for => "ciclistas"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-ciclistas-sm.png'
+            %input#ciclistas.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "ciclistas"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-ciclistas.png'
+        .col
+          .modal
+            %label.modal-js{:for => "patinadores"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-patinadores-sm.png'
+            %input#patinadores.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "patinadores"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-patinadores.png'
+        .col
+          .modal
+            %label.modal-js{:for => "corredores"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-corredores-sm.png'
+            %input#corredores.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "corredores"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-corredores.png'
 
       %hr
 

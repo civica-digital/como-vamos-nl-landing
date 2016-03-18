@@ -1,0 +1,10 @@
+.col3-grid{
+  @include outer-container;
+  @include clearfix;
+  @extend .m-t-lg;
+  @extend .m-b-xl;
+  .col{
+    @include span-columns(4);
+    @include pad(5px);
+  }
+}
