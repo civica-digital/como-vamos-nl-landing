@@ -15,8 +15,8 @@
 //= require components/evalua/evaluate
 
 //= require components/profiles/resume
+//= require components/profiles/action-components
 //= require components/profiles/profile
-
 
 // require_tree .
 
