@@ -1,0 +1,12 @@
+.Releated {
+  padding-top: 45px;
+  padding-bottom: 60px;
+}
+
+.relatedOrganizations {
+  @extend .Releated;
+
+  &__title {
+    padding-bottom: 40px;
+  }
+}

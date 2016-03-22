@@ -5,7 +5,7 @@ class RelatedOrganizations extends React.Component {
 
   render() {
     return <div className="relatedOrganizations">
-      <h2>{this.props.title}</h2>
+      <h1 className="relatedOrganizations__title">{this.props.title}</h1>
       <OrganizationGroup organizations={this.props.orgs}/>
     </div>;
   }
