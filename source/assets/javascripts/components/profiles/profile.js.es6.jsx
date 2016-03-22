@@ -13,27 +13,43 @@ class Profile extends React.Component {
       action: () => null,
       components: {
         title: '¿Cómo puedes participar?',
-        actions: [{
-          title: 'NUlla malesuda',
-          description: 'Sugar plum candy canes candy marshmallow lemon drops',
-        },
-      ],
+        actions: [
+          {
+            title: 'NUlla malesuda',
+            description: 'Sugar plum candy canes candy marshmallow lemon drops',
+          },
+        ],
+      },
+      additional: {
+        title: 'Más Información',
+        description: `Sugar plum candy canes candy marshmallow lemon drops
+         soufflé ice cream cheesecake fruitcake.
+
+         Cookie sweet roll wafer sweet
+         cupcake. Marzipan fruitcake chocolate bar carrot cake wafer candy canes
+         chupa chups chocolate. Soufflé jujubes fruitcake.
+         Pudding muffin carrot cake ice cream cookie carrot cake.`,
       },
     };
   }
 
   render() {
+    const props = this.state;
     return <div className="Profile">
       <Resume
-        title={this.state.title}
-        description={this.state.description}
-        label={this.state.label}
-        action={this.state.action}
+        title={props.title}
+        description={props.description}
+        label={props.label}
+        action={props.action}
         />
       <ActionComponentsGroup
-        title={this.state.components.title}
-        components={this.state.components.actions}
+        title={props.components.title}
+        components={props.components.actions}
         />
+      <Description
+        title={props.additional.title}
+        description={props.additional.description}
+      />
     </div>;
 
   }
