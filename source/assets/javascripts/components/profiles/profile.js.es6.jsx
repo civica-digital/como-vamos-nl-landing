@@ -57,18 +57,21 @@ class Profile extends React.Component {
         label={props.label}
         action={props.action}
         />
-      <ActionComponentsGroup
-        title={props.components.title}
-        components={props.components.actions}
-        />
-      <Description
-        title={props.additional.title}
-        description={props.additional.description}
-        />
-      <RelatedOrganizations
-        title={props.organizations.title}
-        orgs={props.organizations.orgs}
-        />
+
+      <div className="container">
+        <ActionComponentsGroup
+          title={props.components.title}
+          components={props.components.actions}
+          />
+        <Description
+          title={props.additional.title}
+          description={props.additional.description}
+          />
+        <RelatedOrganizations
+          title={props.organizations.title}
+          orgs={props.organizations.orgs}
+          />
+      </div>
     </div>;
   }
 }

@@ -34,10 +34,8 @@ class ActionComponentsGroup extends React.Component {
     );
 
     return <div className="ActionComponents">
-        <div className="container">
           <h1>{this.props.title}</h1>
           { actionComponents }
-        </div>
     </div>;
   }
 }
