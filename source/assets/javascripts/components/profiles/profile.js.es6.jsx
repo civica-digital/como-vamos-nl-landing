@@ -5,10 +5,10 @@ class Profile extends React.Component {
     this.state = {
       title: 'Semana de la seguridad Vial',
       description: `Sugar plum candy canes candy marshmallow lemon drops
-       soufflé ice cream cheesecake fruitcake. Cookie sweet roll wafer sweet
-       cupcake. Marzipan fruitcake chocolate bar carrot cake wafer candy canes
-       chupa chups chocolate. Soufflé jujubes fruitcake.
-       Pudding muffin carrot cake ice cream cookie carrot cake.`,
+      soufflé ice cream cheesecake fruitcake. Cookie sweet roll wafer sweet
+      cupcake. Marzipan fruitcake chocolate bar carrot cake wafer candy canes
+      chupa chups chocolate. Soufflé jujubes fruitcake.
+      Pudding muffin carrot cake ice cream cookie carrot cake.`,
       label: 'Registrarme ->',
       action: () => null,
       components: {
@@ -23,19 +23,46 @@ class Profile extends React.Component {
       additional: {
         title: 'Más Información',
         description: `Sugar plum candy canes candy marshmallow lemon drops
-         soufflé ice cream cheesecake fruitcake.
+        soufflé ice cream cheesecake fruitcake.
+        Cookie sweet roll wafer sweet
 
-         Cookie sweet roll wafer sweet
-         cupcake. Marzipan fruitcake chocolate bar carrot cake wafer candy canes
-         chupa chups chocolate. Soufflé jujubes fruitcake.
-         Pudding muffin carrot cake ice cream cookie carrot cake.`,
+        cupcake. Marzipan fruitcake chocolate bar carrot cake wafer candy canes
+        chupa chups chocolate. Soufflé jujubes fruitcake.
+        Pudding muffin carrot cake ice cream cookie carrot cake.`,
+      },
+      organizations: {
+        title: 'Otras formas de participar',
+        orgs: [
+          {
+            id: 1,
+            organization_name: 'Academia Nacional de Arquitectura',
+            description: 'Gremio',
+            link: 'Mariangeles Martín',
+            contact: 'coordinacion@anamty.org ',
+            action_ids: [5],
+            ACV: true,
+            GCV: true,
+            logo: 'coordinacion@anamty.org',
+          },
+          {
+            id: 2,
+            organization_name: 'Adopta Monterrey',
+            description: 'Animalista',
+            link: 'Julieta Valdez',
+            contact: 'perrosadoptamonterrey@hotmail.com;',
+            action_ids: [6],
+            ACV: false,
+            GCV: true,
+            logo: 'perrosadoptamonterrey@hotmail.com;',
+          },
+        ],
       },
     };
   }
 
   render() {
     const props = this.state;
-    return <div className="Profile">
+    return <div className='Profile'>
       <Resume
         title={props.title}
         description={props.description}
@@ -49,9 +76,12 @@ class Profile extends React.Component {
       <Description
         title={props.additional.title}
         description={props.additional.description}
-      />
+        />
+      <RelatedOrganizations
+        title={props.organizations.title}
+        orgs={props.organizations.orgs}
+        />
     </div>;
-
   }
 }
 

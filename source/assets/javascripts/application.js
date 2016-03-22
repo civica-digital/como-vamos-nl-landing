@@ -17,6 +17,7 @@
 //= require components/profiles/resume
 //= require components/profiles/action-components
 //= require components/profiles/description
+//= require components/profiles/related-organizations
 //= require components/profiles/profile
 
 // require_tree .
