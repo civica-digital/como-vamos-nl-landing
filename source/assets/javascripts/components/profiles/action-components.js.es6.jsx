@@ -5,9 +5,14 @@ class ActionComponent extends React.Component {
 
     render() {
       return <div className="ActionComponent">
-        <p className="ActionComponent__index">{this.props.index}</p>
-        <label className="ActionComponent__title">{this.props.title}</label>
-        <p className="ActionComponent__description">{this.props.description}</p>
+        <div className="ActionComponent__index">
+          {this.props.index}
+        </div>
+
+        <div className="ActionComponent__group">
+          <label className="ActionComponent__title">{this.props.title}</label>
+          <p className="ActionComponent__description">{this.props.description}</p>
+        </div>
       </div>;
     }
 }
@@ -21,7 +26,7 @@ class ActionComponentsGroup extends React.Component {
     const actionComponents = this.props.components.map(
       (component, index) =>
         <ActionComponent
-          title={component.title}
+          title={component.component}
           description={component.description}
           key={index}
           index={index}
@@ -29,8 +34,10 @@ class ActionComponentsGroup extends React.Component {
     );
 
     return <div className="ActionComponents">
-        <h1>{this.props.title}</h1>
-        { actionComponents }
+        <div className="container">
+          <h1>{this.props.title}</h1>
+          { actionComponents }
+        </div>
     </div>;
   }
 }
