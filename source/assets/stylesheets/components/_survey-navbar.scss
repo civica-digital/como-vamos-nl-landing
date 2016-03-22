@@ -4,14 +4,7 @@ $navbar-background-3: lighten($blue, 10%);
 $navbar-background: $light-gray;
 
 .survey-navbar{
-  background-color: $navbar-background;
-  header{
-    @extend .p-t-lg;
-    @extend .p-b-md;
-    h1{
-    font-size: 32px;
-    }
-  }
+   @include top-overview($navbar-background);
 }
 .bar{
   color: white;
@@ -58,4 +51,3 @@ $navbar-background: $light-gray;
     }
   }
 }
-
