@@ -2,13 +2,18 @@ $index-background: $light-gray;
 
 .ActionComponents {
   padding-top: 96px;
+  padding-bottom: 60px;
+  
+  h1 {
+    padding-bottom: 20px;
+  }
+
+  @include dash-bottom($index-background);
 }
 
 .ActionComponent {
-  margin-top: 18px;
-  margin-bottom: 18px;
-
-  @include row();
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-weight: bold;
 
   &__index, &>&__group {
