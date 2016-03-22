@@ -19,6 +19,7 @@
 @import "col3-grid";
 @import "profile-header";
 @import "action-components";
+@import "title_paragraph";
 
 .container{
   @include media(min-width 960px max-width 1199px) {

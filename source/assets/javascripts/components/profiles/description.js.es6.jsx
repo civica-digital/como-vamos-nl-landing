@@ -4,9 +4,9 @@ class Description extends React.Component {
   }
 
   render() {
-    return <div className='description'>
-      <h2>{this.props.title}</h2>
-      <p>{this.props.description}</p>
+    return <div className='SectionText'>
+        <h1 className="SectionText__title">{this.props.title}</h1>
+        <p className="SectionText__description">{this.props.description}</p>
     </div>;
   };
 }
