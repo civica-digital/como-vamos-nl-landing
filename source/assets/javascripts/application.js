@@ -14,6 +14,10 @@
 //= require components/evalua/organization-group
 //= require components/evalua/evaluate
 
+//= require components/profiles/resume
+//= require components/profiles/profile
+
+
 // require_tree .
 
 $(document).ready(() => {
@@ -82,4 +86,3 @@ $(function() {
 jQuery(function(){
   jQuery.mark.jump();
 });
-
