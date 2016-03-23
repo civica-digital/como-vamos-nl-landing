@@ -31,6 +31,10 @@ class Survey extends React.Component {
 
   manageButton(e) {
     new_stage = (this.state.active_stage + 1);
+    if (this.state.results[this.state.active_stage] === undefined) {
+      // console.log("Nada seleccionado");
+      return;
+    }
 
     if (new_stage !== this.state.stages.length) {
       this.state.stages[this.state.active_stage].active = false;
