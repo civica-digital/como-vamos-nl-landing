@@ -1,0 +1,5 @@
+@mixin dash-bottom($color, $width: 1px) {
+  border-color: transparent transparent $color;
+  border-bottom-width: $width;
+  border-style: dashed;
+}
