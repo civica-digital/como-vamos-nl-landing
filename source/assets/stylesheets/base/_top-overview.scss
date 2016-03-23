@@ -1,0 +1,10 @@
+@mixin top-overview($background, $fontsize: 32px) {
+  background-color: $background;
+  header{
+    @extend .p-t-lg;
+    @extend .p-b-md;
+    h1{
+    font-size: $fontsize;
+    }
+  }
+}

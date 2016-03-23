@@ -1,0 +1,14 @@
+$navbar-background: $light-gray;
+
+.ProfileOverview {
+  @include top-overview($navbar-background);
+
+  header {
+    padding-top: 55px;
+    padding-bottom: 80px;
+  }
+
+  button {
+    left: 9%;
+  }
+}

@@ -1,0 +1,35 @@
+$index-background: $light-gray;
+
+.ActionComponents {
+  padding-top: 96px;
+  padding-bottom: 60px;
+  
+  h1 {
+    padding-bottom: 20px;
+  }
+
+  @include dash-bottom($index-background);
+}
+
+.ActionComponent {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+
+  &__index, &>&__group {
+    display: inline-block;
+  }
+
+  &__index {
+    border-radius: 50%;
+    background-color: $index-background;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 20px;
+    position: relative;
+    top: -15px;
+    padding-top: 16px;
+  }
+}

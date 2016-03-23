@@ -1,0 +1,12 @@
+$dash-color: $light-gray;
+
+.SectionText {
+  @include span-columns(8);
+  @include dash-bottom($dash-color);
+  padding-top: 45px;
+  padding-bottom: 60px;
+
+  &__description {
+    padding-top: 40px;
+  }
+}
