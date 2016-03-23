@@ -1,4 +1,4 @@
-header.acv {
+header.acv, header.cvnl-submenu {
   border-bottom: none;
   .logo{
     position: absolute;
@@ -56,5 +56,15 @@ header.acv {
         }
       }
     }
+  }
+}
+header.cvnl-submenu{
+  .logo{
+    left:10px;
+    width: 100px;
+    top:10px;
+  }
+  nav{
+    padding-left: 140px;
   }
 }

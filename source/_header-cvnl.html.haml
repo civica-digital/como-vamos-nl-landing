@@ -1,0 +1,17 @@
+%header.navigation.cvnl-submenu{:role => "banner"}
+  .navigation-wrapper
+    .container
+      .logo
+        = image_tag 'logos/cvnl.png'
+      %nav
+        %ul
+          %li.nav-link= link_to 'PARTICIPA', "#"
+
+  .submenu
+    .container
+      %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
+      %nav{:role => "navigation"}
+        %ul#js-navigation-menu.navigation-menu.show
+          %li.nav-link= link_to 'Qué es CVNL', '#', class: 'active'
+          %li.nav-link= link_to 'Línea de tiempo', '#'
+          %li.nav-link= link_to 'Organizaciones', '#'
