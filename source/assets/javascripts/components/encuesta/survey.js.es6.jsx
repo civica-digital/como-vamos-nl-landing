@@ -32,7 +32,7 @@ class Survey extends React.Component {
   manageButton(e) {
     new_stage = (this.state.active_stage + 1);
     if (this.state.results[this.state.active_stage] === undefined) {
-      // console.log("Nada seleccionado");
+      $("#no-option").show().delay(2000).fadeOut(800);
       return;
     }
 
@@ -70,12 +70,16 @@ class Survey extends React.Component {
   }
 
   render() {
+    const display = { display: 'none' }
     if (!this.state.stages) return ( <section className="survey" /> );
 
     const button = this.state.stages[this.state.active_stage];
 
     return <section className="survey">
       <Stages stages={this.state.stages} />
+      <section id="no-option" style={display} className="flash-alert">
+        Selecciona alguna opción antes de avanzar
+      </section>
       <Cards
         elements={this.state.stages[this.state.active_stage].items}
         activeElement={this.getSelectedForStage()}
