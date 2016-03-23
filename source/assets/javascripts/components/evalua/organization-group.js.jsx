@@ -20,8 +20,8 @@ var OrganizationGroup = React.createClass({
         <Organization
           key={ index }
           organizationName={ organization.organization_name }
-          organizationImage={ organization.image ?
-              organization.image : "../assets/images/icons/organization.png" }
+          organizationImage={ organization.logo ?
+              organization.logo : "../assets/images/icons/organization.png" }
         />
       );
     });
