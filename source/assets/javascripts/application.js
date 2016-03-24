@@ -14,6 +14,8 @@
 //= require components/evalua/organization-group
 //= require components/evalua/evaluate
 
+//= require components/timeline/main.js
+
 // require_tree .
 
 $(document).ready(() => {
