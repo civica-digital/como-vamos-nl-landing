@@ -47,5 +47,16 @@
     -moz-transition: all 0.1s;
     transition: all 0.1s;
     }
+    &.disabled{
+        background-color: #ddd;
+
+        -webkit-text-shadow: 1px -1px 0 #ccc;
+        -moz-text-shadow: 1px -1px 0 #ccc;
+        text-shadow: 1px -1px 0 #ccc;
+
+        -webkit-box-shadow: -7px 7px 0px #ccc;
+        -moz-box-shadow: -7px 7px 0px #ccc;
+        box-shadow: -7px 7px 0px #ccc;
+    }
   }
 }
