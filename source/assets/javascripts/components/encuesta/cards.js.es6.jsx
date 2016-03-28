@@ -37,8 +37,10 @@ class Cards extends  React.Component {
       <Card
         title={item.title}
         description={item.description}
-        classes={index == this.props.activeElement ? "selected" : ""}
-        active={index == this.props.activeElement}
+        classes={ index == this.props.activeElement ? 'selected' : '' }
+        active={ index == this.props.activeElement ||
+          (typeof this.props.activeElement === 'object' &&
+           this.props.activeElement.indexOf(index) !== -1) }
         key={index}
         id={index}
         updateElement={this.props.updateElement} />)

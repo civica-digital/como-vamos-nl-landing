@@ -24,6 +24,7 @@ class Survey extends React.Component {
             }, {
               title: "¿Cómo te gustaría ayudar?",
               items: stagesModalidad,
+              multiple: true,
               label: "Comienza a participar " + String.fromCharCode(8594),
             }
           ]}));
@@ -55,14 +56,34 @@ class Survey extends React.Component {
 
   updateResult(index) {
     var new_results = this.state.results
-    new_results[this.state.active_stage] = index;
-    console.log("update results " + index);
+    const active = this.state.active_stage;
+
+    if (this.state.stages[active].multiple) {
+      if (typeof new_results[active] !== 'object' || new_results[active] === null) {
+        new_results[active] = [];
+        console.log("establecer array")
+      }
+
+      const i = new_results[active].indexOf(index);
+      if (new_results[active].length === 1 && i !== -1 )
+        return;
+      else if (i !== -1)
+        new_results[active].splice(i, 1);
+      else
+        new_results[active].push(index);
+
+    } else {
+      new_results[this.state.active_stage] = index;
+    }
+
+    console.log("update results " + new_results);
     this.setState({results: new_results});
   }
 
   getSelectedForStage() {
     if (typeof this.state.results[this.state.active_stage] !== "undefined" &&
     this.state.results[this.state.active_stage] !== null) {
+      console.log(this.state.results[this.state.active_stage])
       return this.state.results[this.state.active_stage];
     } else {
       return -1;
