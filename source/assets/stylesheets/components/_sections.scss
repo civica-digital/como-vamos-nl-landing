@@ -1,0 +1,12 @@
+.GroupProfile {
+  @include row();
+
+  .Content  {
+    @include span-columns(9);
+    @extend .p-r-md;
+  }
+  .RelatedContent {
+    @include span-columns(3);
+    padding-top: 100px;
+  }
+}

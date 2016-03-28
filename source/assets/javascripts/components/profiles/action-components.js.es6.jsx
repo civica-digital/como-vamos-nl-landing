@@ -26,7 +26,7 @@ class ActionComponentsGroup extends React.Component {
     const actionComponents = this.props.components.map(
       (component, index) =>
         <ActionComponent
-          title={component.component}
+          title={component.title}
           description={component.description}
           key={index}
           index={index}
