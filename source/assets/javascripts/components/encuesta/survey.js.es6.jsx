@@ -29,9 +29,18 @@ class Survey extends React.Component {
           ]}));
   }
 
+  isValid() {
+    return this.state.results[this.state.active_stage] === undefined;
+  }
+
+  disabled() {
+    if (this.isValid()) return 'disabled';
+    return '';
+  }
+
   manageButton(e) {
     new_stage = (this.state.active_stage + 1);
-    if (this.state.results[this.state.active_stage] === undefined) {
+    if (this.isValid()) {
       $("#no-option").show().delay(2000).fadeOut(800);
       return;
     }
@@ -86,9 +95,12 @@ class Survey extends React.Component {
         updateElement={this.updateResult.bind(this)} />
 
         <div className="submit-section">
-          <Button label={button.label} action={this.manageButton.bind(this)} />
+          <Button
+            disabled={this.disabled.bind(this)}
+            label={button.label}
+            action={this.manageButton.bind(this)} />
         </div>
-    </section>
+    </section>;
   }
 }
 
