@@ -29,10 +29,19 @@ class Survey extends React.Component {
           ]}));
   }
 
+  isValid() {
+    return this.state.results[this.state.active_stage] === undefined;
+  }
+
+  disabled() {
+    if (this.isValid()) return 'disabled';
+    return '';
+  }
+
   manageButton(e) {
     new_stage = (this.state.active_stage + 1);
-    if (this.state.results[this.state.active_stage] === undefined) {
-      // console.log("Nada seleccionado");
+    if (this.isValid()) {
+      $("#no-option").show().delay(2000).fadeOut(800);
       return;
     }
 
@@ -70,21 +79,28 @@ class Survey extends React.Component {
   }
 
   render() {
+    const display = { display: 'none' }
     if (!this.state.stages) return ( <section className="survey" /> );
 
     const button = this.state.stages[this.state.active_stage];
 
     return <section className="survey">
       <Stages stages={this.state.stages} />
+      <section id="no-option" style={display} className="flash-alert">
+        Selecciona alguna opción antes de avanzar
+      </section>
       <Cards
         elements={this.state.stages[this.state.active_stage].items}
         activeElement={this.getSelectedForStage()}
         updateElement={this.updateResult.bind(this)} />
 
         <div className="submit-section">
-          <Button label={button.label} action={this.manageButton.bind(this)} />
+          <Button
+            disabled={this.disabled.bind(this)}
+            label={button.label}
+            action={this.manageButton.bind(this)} />
         </div>
-    </section>
+    </section>;
   }
 }
 
