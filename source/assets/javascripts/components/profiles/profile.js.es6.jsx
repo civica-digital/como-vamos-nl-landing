@@ -96,4 +96,5 @@ class Profile extends React.Component {
 
 if (document.getElementById('profile')) {
   React.render(<Profile />, document.getElementById('profile'));
+  $('.BoxItems__item label').fitText(1.2);
 }

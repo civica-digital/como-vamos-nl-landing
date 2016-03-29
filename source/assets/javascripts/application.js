@@ -1,4 +1,5 @@
 //= require jquery
+//= require external/jquery.fittext
 //= require react
 
 //= require_tree ./utils
