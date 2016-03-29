@@ -39,6 +39,11 @@ class Profile extends React.Component {
                 title: 'Más Información',
                 description: component.information,
               },
+              suscription: {
+                title: '¿Sólo quieres mantenerte informado?',
+                placeholder: 'Dejanos tu correo para escribirte sobre la acción',
+                buttonMsg: 'Enviar',
+              },
               organizations: {
                 title: 'Coordinan',
                 orgs: organizations,
@@ -54,6 +59,10 @@ class Profile extends React.Component {
             });
           });
       });
+  }
+
+  buttonAction() {
+    return;
   }
 
   render() {
@@ -78,6 +87,9 @@ class Profile extends React.Component {
             <Description
               title={props.additional.title}
               description={props.additional.description}
+              />
+            <SuscriptionMail { ...this.state.suscription }
+              buttonAction={this.buttonAction.bind(this)}
               />
           </div>
           <RelatedInfo

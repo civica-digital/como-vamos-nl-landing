@@ -4,6 +4,8 @@
   .Content  {
     @include span-columns(9);
     @extend .p-r-md;
+
+
   }
   .RelatedContent {
     @include span-columns(3);

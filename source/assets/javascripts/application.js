@@ -20,6 +20,7 @@
 //= require components/profiles/description
 //= require components/profiles/related-organizations
 //= require components/profiles/related-info
+//= require components/profiles/suscription-mail
 //= require components/profiles/profile
 
 //= require components/timeline/main.js
