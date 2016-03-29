@@ -67,7 +67,14 @@ class Profile extends React.Component {
 
   render() {
     const props = this.state;
+
     if (props === null) return <div className='Profile' />;
+
+    const description = props.additional.description === '' ? '' :
+    <Description
+      title={props.additional.title}
+      description={props.additional.description}
+      />;
 
     return <div className='Profile'>
       <Resume
@@ -84,10 +91,7 @@ class Profile extends React.Component {
               title={props.activities.title}
               components={props.activities.actions}
               />
-            <Description
-              title={props.additional.title}
-              description={props.additional.description}
-              />
+            { description }
             <SuscriptionMail { ...this.state.suscription }
               buttonAction={this.buttonAction.bind(this)}
               />
