@@ -3,7 +3,7 @@
   .container{
     @include outer-container;
     @include clearfix;
-    @extend .m-t-xl;
+    @extend .p-t-xl;
 
     h3{
       color: $light-blue;
@@ -82,5 +82,9 @@
   .action{
     @extend .m-t-md;
   }
+}
+section.content-gray{
+  @extend .content;
+  background-color: $light-gray;
 }
 

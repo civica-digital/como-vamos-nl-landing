@@ -21,6 +21,7 @@
 @import "action-components";
 @import "title_paragraph";
 @import "related-elements";
+@import "timeline";
 
 .container{
   @include media(min-width 960px max-width 1199px) {

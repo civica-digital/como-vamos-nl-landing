@@ -20,6 +20,8 @@
 //= require components/profiles/related-organizations
 //= require components/profiles/profile
 
+//= require components/timeline/main.js
+
 // require_tree .
 
 $(document).ready(() => {
