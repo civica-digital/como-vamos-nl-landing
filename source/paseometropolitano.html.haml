@@ -105,6 +105,18 @@ layout: event
                 .modal-close{:for => "corredores"}
                 .image-container
                   =image_tag 'eventos/paseo-metropolitano-corredores.png'
+      .col3-grid
+        .col
+          .modal
+            %label.modal-js{:for => "longboards"}
+              .modal-trigger
+                =image_tag 'eventos/paseo-metropolitano-longboards-sm.png'
+            %input#longboards.modal-state{:type => "checkbox"}
+            .modal-fade-screen
+              .modal-inner
+                .modal-close{:for => "longboards"}
+                .image-container
+                  =image_tag 'eventos/paseo-metropolitano-longboards.png'
 
       %hr
 
