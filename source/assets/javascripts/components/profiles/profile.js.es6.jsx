@@ -8,6 +8,10 @@ class Profile extends React.Component {
       .done((data) => {
         const component = data.find(
             (element) => element.id_component === parseInt(getUrlVars().component));
+        console.log(component);
+        if (component === null || typeof component === 'undefined') {
+          error404("No se encontro el componente de acción solicitado");
+        }
 
         const components = data.filter(
           (comp) => component.id_accion == comp.id_accion

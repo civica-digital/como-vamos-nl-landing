@@ -1,0 +1,13 @@
+#error404 {
+  @extend .m-t-xl;
+  @extend .m-b-xl;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+  p {
+    text-align: center;
+    font-size: 22px;
+  }
+}

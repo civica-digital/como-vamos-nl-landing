@@ -25,6 +25,8 @@
 
 //= require components/timeline/main.js
 
+//= require components/404/404
+
 // require_tree .
 
 $(document).ready(() => {
