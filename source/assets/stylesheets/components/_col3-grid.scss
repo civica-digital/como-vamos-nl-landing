@@ -6,5 +6,8 @@
   .col{
     @include span-columns(4);
     @include pad(5px);
+    @include omega(3n);
+    display: inline-block;
+    float: left;
   }
 }
