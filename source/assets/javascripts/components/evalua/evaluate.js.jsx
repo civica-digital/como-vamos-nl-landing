@@ -29,6 +29,8 @@ var Evaluate = React.createClass({
         self.setState({
           ejeTitle: data[getUrlVars()[0]].title,
           tema: data[getUrlVars()[0]].title,
+          logo: data[getUrlVars()[0]].logo,
+          color: data[getUrlVars()[0]].color,
           disponible: stagesSurvey[getUrlVars()[1]].title,
           modalidad: stagesModalidad[getUrlVars()[2]].title
         })
@@ -36,6 +38,9 @@ var Evaluate = React.createClass({
 
   },
   render: function() {
+    if (this.state.ejeTitle === null ||
+        typeof this.state.ejeTitle === "undefined")
+      return <div />;
     return (
       <div>
         <section className="survey-navbar">
@@ -44,7 +49,10 @@ var Evaluate = React.createClass({
               <h1>Comienza a participar</h1>
               <a  href="../">&larr; Vuelve a responder la encuesta</a>
             </header>
-            <Bar tema={ this.state.tema }
+            <Bar
+              logo={ 'assets/images/ejes/' + this.state.logo }
+              color={ this.state.color }
+              tema={ this.state.tema }
               disponible={ this.state.disponible }
               modalidad={ this.state.modalidad } />
           </div>
