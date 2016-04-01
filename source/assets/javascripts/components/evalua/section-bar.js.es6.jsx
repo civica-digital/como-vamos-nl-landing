@@ -12,17 +12,19 @@ var SectionBar = React.createClass({
 
 
 var Bar = React.createClass({
-  render() {
+  componentDidUpdate () {
     $('.bar div').css(
-      { 'background-color': tinycolor(this.props.color).lighten(10).toString()
-    });
+      { 'background-color': tinycolor(this.props.color).lighten(10).toString() }
+    );
     $('.bar div:first-child').css(
-      { 'background-color': this.props.color
-    });
-    $('.bar div:last-child').css({
-      'background-color': tinycolor(this.props.color).lighten(15).toString()
-    });
+      { 'background-color': this.props.color }
+    );
+    $('.bar div:last-child').css(
+      { 'background-color': tinycolor(this.props.color).lighten(15).toString() }
+    );
+  },
 
+  render() {
     return <div className="bar">
       <SectionBar
           img={ this.props.logo ?
