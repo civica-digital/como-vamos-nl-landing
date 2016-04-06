@@ -16,7 +16,8 @@ section.organizations{
     @include span-columns(2);
     @include omega(6n);
     @include pad(0 10px 10px 0);
-    display: inline-block;
+    display: block;
+    float: left;
 
     @include media(min-width 780px max-width 1199px) {
       @include span-columns(3);
@@ -39,7 +40,7 @@ section.organizations{
       text-align: center;
       img{
         text-align: center;
-        display: inline-block;
+        display: block;
       }
     }
     .organization-name{
