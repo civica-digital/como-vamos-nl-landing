@@ -45,7 +45,7 @@
 }
 .eje3{
   @extend .eje;
-  background-color: lighten($yellow, 5%);
+  background-color: lighten($corn, 5%);
   &:before{
     background-image: url('../images/acciones/ejes/3_ilustracion.png');
   }
@@ -138,10 +138,10 @@
 .acciones3{
   @extend .acciones;
   h4{
-    background-color: $yellow;
+    background-color: $corn;
   }
   a.accion:hover p {
-    background-color: lighten($yellow, 10%);
+    background-color: lighten($corn, 10%);
   }
 }
 .accion-full-width{
