@@ -9,6 +9,7 @@
   padding-left: 80px;
   border-radius: 35px;
   position: relative;
+  @extend .m-t-lg;
 
   h4{
     font-size: 1.2em;
@@ -60,7 +61,7 @@
     @include span-columns(4);
     @include pad(5px);
     display: inline-block!important;
-    @extend .m-b-lg;
+    @extend .m-b-xs;
     vertical-align: top;
     float: left;
     &:nth-child(3n+1){
@@ -74,7 +75,7 @@
       padding-bottom: 0;
 
       span{
-        display: inline-block;
+        display: block;
         font-family: 'dinnlight', sans-serif;
         padding-bottom: 5px;
       }
@@ -84,7 +85,17 @@
       background-color: $light-gray;
       padding: 15px;
       border-radius: 0 0 5px 5px;
+      color:$dark-gray;
+      @include transition;
     }
+    &:hover{
+      p{
+        color:#fff;
+        @include transition;
+      }
+    }
+
+    //media
     @include media(min-width 780px max-width 959px) {
       @include span-columns(6);
       &:nth-child(2n+1){
@@ -96,14 +107,14 @@
       &:nth-child(3n+1){
         clear: none;
       }
-
-     }
-     @include media(min-width 320px max-width 779px) {
+    }
+    @include media(min-width 320px max-width 779px) {
       @include span-columns(12);
       &:nth-child(1){
         margin-right: 0;
       }
     }
+
   }
 }
 .acciones1{
@@ -111,16 +122,40 @@
   h4{
     background-color: $blue;
   }
+  a.accion:hover p {
+    background-color: lighten($blue, 10%);
+  }
 }
 .acciones2{
   @extend .acciones;
   h4{
     background-color: $red;
   }
+  a.accion:hover p {
+    background-color: lighten($red, 10%);
+  }
 }
 .acciones3{
   @extend .acciones;
   h4{
     background-color: $yellow;
+  }
+  a.accion:hover p {
+    background-color: lighten($yellow, 10%);
+  }
+}
+.accion-full-width{
+  @extend .accion;
+  width:100%!important;
+  &:hover p{color: $dark-gray!important;}
+}
+.accion-detalle{
+  .col2-grid{
+    .col{
+      padding:0 20px;
+      ul{
+        margin-bottom: 0;
+      }
+    }
   }
 }

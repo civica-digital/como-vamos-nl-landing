@@ -1,0 +1,10 @@
+.col2-grid{
+  @include outer-container;
+  @include clearfix;
+  .col{
+    @include span-columns(6);
+    @include omega(2);
+    float: left;
+    display: block;
+  }
+}
