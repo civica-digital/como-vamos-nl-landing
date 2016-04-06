@@ -1,5 +1,5 @@
 .ejes{
-  @extend .p-t-xl;
+  @extend .p-t-md;
 }
 
 .eje{
@@ -58,19 +58,14 @@
   @extend .m-b-sm;
 
   .accion{
-    @include span-columns(4);
-    @include pad(5px);
-    display: inline-block!important;
-    @extend .m-b-xs;
+    @extend .m-b-md;
     vertical-align: top;
+    display: inline-block;
     float: left;
-    &:nth-child(3n+1){
-      clear: left;
-    }
 
     h4{
       color:#fff;
-      border-radius: 5px 5px 0 0;
+      border-radius: 10px 10px 0 0;
       padding: 15px;
       padding-bottom: 0;
 
@@ -83,36 +78,41 @@
     p{
       line-height: 1.5em;
       background-color: $light-gray;
-      padding: 15px;
-      border-radius: 0 0 5px 5px;
+      padding: 10px 15px;
+      border-radius: 0 0 10px 10px;
       color:$dark-gray;
-      @include transition;
+      height: 5.4em;
+      overflow: hidden;
+      position: relative;
+      &:after{
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: 2em;
+        background: linear-gradient(to right, rgba($light-gray, 0), rgba($light-gray, 1) 50%);
+      }
     }
     &:hover{
       p{
         color:#fff;
-        @include transition;
       }
     }
 
     //media
+    @include media(min-width 960px) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
     @include media(min-width 780px max-width 959px) {
       @include span-columns(6);
-      &:nth-child(2n+1){
-        clear: left;
-      }
-      &:nth-child(2n){
-        margin-right: 0;
-      }
-      &:nth-child(3n+1){
-        clear: none;
-      }
+      @include omega(2n);
     }
     @include media(min-width 320px max-width 779px) {
       @include span-columns(12);
-      &:nth-child(1){
-        margin-right: 0;
-      }
     }
 
   }
@@ -124,6 +124,9 @@
   }
   a.accion:hover p {
     background-color: lighten($blue, 10%);
+    &:after{
+      background: linear-gradient(to right, rgba($blue, 0), lighten($blue, 10%) 50%);
+    }
   }
 }
 .acciones2{
@@ -133,6 +136,9 @@
   }
   a.accion:hover p {
     background-color: lighten($red, 10%);
+    &:after{
+      background: linear-gradient(to right, rgba($red, 0), lighten($red, 10%) 50%);
+    }
   }
 }
 .acciones3{
@@ -142,6 +148,9 @@
   }
   a.accion:hover p {
     background-color: lighten($corn, 10%);
+    &:after{
+      background: linear-gradient(to right, rgba($corn, 0), lighten($corn, 10%) 50%);
+    }
   }
 }
 .accion-full-width{
