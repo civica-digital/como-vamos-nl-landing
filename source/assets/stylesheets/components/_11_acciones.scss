@@ -1,0 +1,126 @@
+.ejes{
+  @extend .p-t-xl;
+}
+
+.eje{
+  color:#fff;
+  padding: 14px;
+  min-height: 70px;
+  padding-left: 80px;
+  border-radius: 35px;
+  position: relative;
+
+  h4{
+    font-size: 1.2em;
+  }
+  p{
+    line-height: 1em;
+  }
+
+  &:before{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    content: "";
+    background-size: 60px;
+  }
+}
+.eje1{
+  @extend .eje;
+  background-color: lighten($blue, 5%);
+  &:before{
+    background-image: url('../images/acciones/ejes/1_ilustracion.png');
+  }
+}
+.eje2{
+  @extend .eje;
+  background-color: lighten($red, 5%);
+  &:before{
+    background-image: url('../images/acciones/ejes/2_ilustracion.png');
+  }
+}
+.eje3{
+  @extend .eje;
+  background-color: lighten($yellow, 5%);
+  &:before{
+    background-image: url('../images/acciones/ejes/3_ilustracion.png');
+  }
+}
+
+.acciones{
+  @include outer-container;
+  @include clearfix;
+  @extend .m-t-lg;
+  @extend .m-b-sm;
+
+  .accion{
+    @include span-columns(4);
+    @include pad(5px);
+    display: inline-block!important;
+    @extend .m-b-lg;
+    vertical-align: top;
+    float: left;
+    &:nth-child(3n+1){
+      clear: left;
+    }
+
+    h4{
+      color:#fff;
+      border-radius: 5px 5px 0 0;
+      padding: 15px;
+      padding-bottom: 0;
+
+      span{
+        display: inline-block;
+        font-family: 'dinnlight', sans-serif;
+        padding-bottom: 5px;
+      }
+    }
+    p{
+      line-height: 1.5em;
+      background-color: $light-gray;
+      padding: 15px;
+      border-radius: 0 0 5px 5px;
+    }
+    @include media(min-width 780px max-width 959px) {
+      @include span-columns(6);
+      &:nth-child(2n+1){
+        clear: left;
+      }
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+      &:nth-child(3n+1){
+        clear: none;
+      }
+
+     }
+     @include media(min-width 320px max-width 779px) {
+      @include span-columns(12);
+      &:nth-child(1){
+        margin-right: 0;
+      }
+    }
+  }
+}
+.acciones1{
+  @extend .acciones;
+  h4{
+    background-color: $blue;
+  }
+}
+.acciones2{
+  @extend .acciones;
+  h4{
+    background-color: $red;
+  }
+}
+.acciones3{
+  @extend .acciones;
+  h4{
+    background-color: $yellow;
+  }
+}
