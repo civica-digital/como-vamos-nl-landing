@@ -11,7 +11,7 @@ var Evaluate = React.createClass({
     $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=organizations')
       .done((data) => {
         const orgs = data.filter((data) => {
-          return data.action_ids.indexOf(parseInt(getUrlVars()[0])) !== -1;
+          return data.action_ids.indexOf(parseInt(getUrlVars()[0]) + 1) !== -1;
         })
         self.setState({organizations: orgs})
     }).fail((e) => console.log("error " + e));
@@ -19,7 +19,7 @@ var Evaluate = React.createClass({
     $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=components')
       .done((data) => {
         const projects = data.filter((element, index) => {
-          return element.id_accion == getUrlVars()[0];
+          return element.id_accion == (parseInt(getUrlVars()[0]) + 1);
         });
         self.setState({projects: projects})
     });
@@ -29,6 +29,8 @@ var Evaluate = React.createClass({
         self.setState({
           ejeTitle: data[getUrlVars()[0]].title,
           tema: data[getUrlVars()[0]].title,
+          logo: data[getUrlVars()[0]].logo,
+          color: data[getUrlVars()[0]].color,
           disponible: stagesSurvey[getUrlVars()[1]].title,
           modalidad: stagesModalidad[getUrlVars()[2]].title
         })
@@ -44,7 +46,10 @@ var Evaluate = React.createClass({
               <h1>Comienza a participar</h1>
               <a  href="../">&larr; Vuelve a responder la encuesta</a>
             </header>
-            <Bar tema={ this.state.tema }
+            <Bar
+              logo={ 'assets/images/ejes/' + this.state.logo }
+              color={ this.state.color }
+              tema={ this.state.tema }
               disponible={ this.state.disponible }
               modalidad={ this.state.modalidad } />
           </div>

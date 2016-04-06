@@ -7,7 +7,9 @@ var Project = React.createClass({
         </header>
         <div className="project-body">
           <p>{ this.props.projectDescription }</p>
-          <button>Participa</button>
+          <a href={urlComponent(this.props.ProjectID)}>
+            <button type="button" >Participa</button>
+          </a>
         </div>
       </div>
     );
@@ -20,6 +22,7 @@ var ProjectGroup = React.createClass({
       return (
         <Project
           key={ index }
+          ProjectID={ project.id_component }
           projectName={ project.component }
           projectDescription={ project.description }
         />
