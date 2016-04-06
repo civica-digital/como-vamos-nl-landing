@@ -3,7 +3,7 @@ $index-background: $light-gray;
 .ActionComponents {
   padding-top: 96px;
   padding-bottom: 60px;
-  
+
   h1 {
     padding-bottom: 20px;
   }
@@ -31,5 +31,10 @@ $index-background: $light-gray;
     position: relative;
     top: -15px;
     padding-top: 16px;
+  }
+
+  &__title {
+    position: relative;
+    top: -12px;
   }
 }

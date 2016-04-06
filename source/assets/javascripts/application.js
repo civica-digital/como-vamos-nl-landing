@@ -1,4 +1,5 @@
 //= require jquery
+//= require external/jquery.fittext
 //= require react
 
 //= require_tree ./utils
@@ -18,9 +19,13 @@
 //= require components/profiles/action-components
 //= require components/profiles/description
 //= require components/profiles/related-organizations
+//= require components/profiles/related-info
+//= require components/profiles/suscription-mail
 //= require components/profiles/profile
 
 //= require components/timeline/main.js
+
+//= require components/404/404
 
 // require_tree .
 

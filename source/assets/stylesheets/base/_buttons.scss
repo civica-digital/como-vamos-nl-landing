@@ -33,3 +33,13 @@
     }
   }
 }
+
+
+@mixin bigbutton($color: $light-green, $font-family: 'dinnbold', $font-size: 1.3em) {
+  font-family: $font-family;
+  background-color: $color;
+  text-transform: uppercase;
+  font-size: $font-size;
+  letter-spacing: 1px;
+  padding: 25px 25px 20px 25px;
+}

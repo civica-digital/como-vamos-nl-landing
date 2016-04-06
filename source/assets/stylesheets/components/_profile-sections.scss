@@ -1,0 +1,47 @@
+$dash-color: $light-gray;
+$send-color: $light-green;
+
+@mixin mSectionSeparation() {
+  @include dash-bottom($dash-color);
+  padding-top: 45px;
+  padding-bottom: 60px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}
+
+.SectionText {
+  @include mSectionSeparation;
+}
+
+.SuscriptionMail {
+  @include mSectionSeparation;
+
+  &__form {
+    background-color: $dash-color;
+    @extend .p-t-lg;
+    @extend .p-b-lg;
+    @extend .p-l-md;
+    @extend .p-r-md;
+
+    form { position: relative; }
+
+    input, button {
+      height: 60px;
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    input {
+      font-size: 18px;
+    }
+    button {
+      @include position(absolute, 0em 0em 0em null);
+      @include bigbutton();
+      // width: 130px;
+      background-color: $send-color;
+    }
+
+  }
+}

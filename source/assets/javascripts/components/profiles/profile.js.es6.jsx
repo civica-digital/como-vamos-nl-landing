@@ -4,51 +4,81 @@ class Profile extends React.Component {
   }
 
   componentWillMount() {
-    $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=organizations')
+    $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=components')
       .done((data) => {
-        const org = data.find(
-            (element) => element.id === parseInt(getUrlVars().organization));
+        const component = data.find(
+            (element) => element.id_component === parseInt(getUrlVars().component));
+        console.log(component);
+        if (component === null || typeof component === 'undefined') {
+          error404("No se encontro el componente de acción solicitado");
+        }
 
-        const organizations = data.filter(
-          (data) => intersect(org.action_ids, data.action_ids).length !== 0
+        const components = data.filter(
+          (comp) => component.id_accion == comp.id_accion
         );
 
-        $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=components')
+        const activities = [];
+        const { activity_1, activity_2 } = component;
+        if (activity_1 !== null) activities.push({ title: activity_1 })
+        if (activity_2 !== null) activities.push({ title: activity_2 })
+
+        $.getJSON('https://script.google.com/a/macros/civica.digital/s/AKfycbyZBWk5JINK1ulRLfN8aZS8k9iMDp_1vIj2VKYhnRp-sMNbSleh/exec?resource=organizations')
           .done((data) => {
-            const actions = data.filter(
-              (data) => org.action_ids.indexOf(data.id_accion) !== -1);
+            const organizations = data
+              .filter((org) => org.action_ids.indexOf(component.id_accion) !== -1)
+              .map((comp) => {
+                return {
+                  src: comp.logo,
+                  href: urlComponent(comp.id),
+                  title: comp.organization_name,
+                };
+              });
 
             this.setState({
-              title: org.organization_name,
-              description: org.description,
-              label: 'Registrarme ->',
+              title: component.component,
+              description: component.description,
+              label: 'Registrarme ' + String.fromCharCode(10140),
               action: () => null,
               additional: {
                 title: 'Más Información',
-                description: `Sugar plum candy canes candy marshmallow lemon drops
-                  soufflé ice cream cheesecake fruitcake.
-                  Cookie sweet roll wafer sweet
-
-                  cupcake. Marzipan fruitcake chocolate bar carrot cake wafer candy canes
-                  chupa chups chocolate. Soufflé jujubes fruitcake.
-                  Pudding muffin carrot cake ice cream cookie carrot cake.`,
+                description: component.information,
+              },
+              suscription: {
+                title: '¿Sólo quieres mantenerte informado?',
+                placeholder: 'Dejanos tu correo para escribirte sobre la acción',
+                buttonMsg: 'Enviar',
               },
               organizations: {
-                title: 'Otras formas de participar',
+                title: 'Coordinan',
                 orgs: organizations,
               },
-              components: {
+              activities: {
                 title: '¿Cómo puedes participar?',
-                actions: actions,
+                actions: activities,
+              },
+              components: {
+                title: 'Otras formas de participar',
+                items: components,
               },
             });
           });
       });
   }
 
+  buttonAction() {
+    return;
+  }
+
   render() {
     const props = this.state;
+
     if (props === null) return <div className='Profile' />;
+
+    const description = props.additional.description === '' ? '' :
+    <Description
+      title={props.additional.title}
+      description={props.additional.description}
+      />;
 
     return <div className='Profile'>
       <Resume
@@ -59,17 +89,25 @@ class Profile extends React.Component {
         />
 
       <div className="container">
-        <ActionComponentsGroup
-          title={props.components.title}
-          components={props.components.actions}
-          />
-        <Description
-          title={props.additional.title}
-          description={props.additional.description}
-          />
+        <div className="GroupProfile">
+          <div className="Content">
+            <ActionComponentsGroup
+              title={props.activities.title}
+              components={props.activities.actions}
+              />
+            { description }
+            <SuscriptionMail { ...this.state.suscription }
+              buttonAction={this.buttonAction.bind(this)}
+              />
+          </div>
+          <RelatedInfo
+            title={props.organizations.title}
+            items={props.organizations.orgs}
+            />
+        </div>
         <RelatedOrganizations
-          title={props.organizations.title}
-          orgs={props.organizations.orgs}
+          title={props.components.title}
+          items={props.components.items}
           />
       </div>
     </div>;
@@ -78,4 +116,5 @@ class Profile extends React.Component {
 
 if (document.getElementById('profile')) {
   React.render(<Profile />, document.getElementById('profile'));
+  $('.BoxItems__item label').fitText(1.2);
 }

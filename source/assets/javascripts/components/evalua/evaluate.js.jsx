@@ -38,6 +38,9 @@ var Evaluate = React.createClass({
 
   },
   render: function() {
+    if (this.state.ejeTitle === null ||
+        typeof this.state.ejeTitle === "undefined")
+      return <div />;
     return (
       <div>
         <section className="survey-navbar">
