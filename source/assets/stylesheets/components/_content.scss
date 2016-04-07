@@ -45,13 +45,18 @@
       @extend .m-b-xl;
       li{
         list-style-type: none;
+        padding-left: 30px;
+        position: relative;
+        padding-bottom: 10px;
         &:before{
           content: "»";
           margin-right: 10px;
           color: $lime;
-          width: 10px;
+          width: 30px;
           height: 10px;
           line-height: 30px;
+          position: absolute;
+          left: 0;
         }
       }
     }

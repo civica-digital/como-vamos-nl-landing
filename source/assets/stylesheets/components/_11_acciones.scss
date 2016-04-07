@@ -1,0 +1,170 @@
+.ejes{
+  @extend .p-t-md;
+}
+
+.eje{
+  color:#fff;
+  padding: 14px;
+  min-height: 70px;
+  padding-left: 80px;
+  border-radius: 35px;
+  position: relative;
+  @extend .m-t-lg;
+
+  h4{
+    font-size: 1.2em;
+  }
+  p{
+    line-height: 1em;
+  }
+
+  &:before{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    content: "";
+    background-size: 60px;
+  }
+}
+.eje1{
+  @extend .eje;
+  background-color: lighten($blue, 5%);
+  &:before{
+    background-image: url('../images/acciones/ejes/1_ilustracion.png');
+  }
+}
+.eje2{
+  @extend .eje;
+  background-color: lighten($red, 5%);
+  &:before{
+    background-image: url('../images/acciones/ejes/2_ilustracion.png');
+  }
+}
+.eje3{
+  @extend .eje;
+  background-color: lighten($corn, 5%);
+  &:before{
+    background-image: url('../images/acciones/ejes/3_ilustracion.png');
+  }
+}
+
+.acciones{
+  @include outer-container;
+  @include clearfix;
+  @extend .m-t-lg;
+  @extend .m-b-sm;
+
+  .accion{
+    @extend .m-b-md;
+    vertical-align: top;
+    display: inline-block;
+    float: left;
+
+    h4{
+      color:#fff;
+      border-radius: 10px 10px 0 0;
+      padding: 15px;
+      padding-bottom: 0;
+
+      span{
+        display: block;
+        font-family: 'dinnlight', sans-serif;
+        padding-bottom: 5px;
+      }
+    }
+    p{
+      line-height: 1.5em;
+      background-color: $light-gray;
+      padding: 10px 15px;
+      border-radius: 0 0 10px 10px;
+      color:$dark-gray;
+      height: 5.4em;
+      overflow: hidden;
+      position: relative;
+      &:after{
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: 2em;
+        background: linear-gradient(to right, rgba($light-gray, 0), rgba($light-gray, 1) 50%);
+      }
+    }
+    &:hover{
+      p{
+        color:#fff;
+      }
+    }
+
+    //media
+    @include media(min-width 960px) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
+    @include media(min-width 780px max-width 959px) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+    @include media(min-width 320px max-width 779px) {
+      @include span-columns(12);
+    }
+
+  }
+}
+.acciones1{
+  @extend .acciones;
+  h4{
+    background-color: $blue;
+  }
+  a.accion:hover p {
+    background-color: lighten($blue, 10%);
+    &:after{
+      background: linear-gradient(to right, rgba($blue, 0), lighten($blue, 10%) 50%);
+    }
+  }
+}
+.acciones2{
+  @extend .acciones;
+  h4{
+    background-color: $red;
+  }
+  a.accion:hover p {
+    background-color: lighten($red, 10%);
+    &:after{
+      background: linear-gradient(to right, rgba($red, 0), lighten($red, 10%) 50%);
+    }
+  }
+}
+.acciones3{
+  @extend .acciones;
+  h4{
+    background-color: $corn;
+  }
+  a.accion:hover p {
+    background-color: lighten($corn, 10%);
+    &:after{
+      background: linear-gradient(to right, rgba($corn, 0), lighten($corn, 10%) 50%);
+    }
+  }
+}
+.accion-full-width{
+  @extend .accion;
+  width:100%!important;
+  &:hover p{color: $dark-gray!important;}
+}
+.accion-detalle{
+  .col2-grid{
+    .col{
+      padding:0 20px;
+      ul{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
