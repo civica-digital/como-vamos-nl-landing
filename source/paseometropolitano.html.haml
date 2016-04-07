@@ -122,6 +122,50 @@ layout: event
                 .modal-close{:for => "longboards"}
                 .image-container
                   =image_tag 'eventos/paseo-metropolitano-longboards.png'
+      %hr
+      %h3.text-center Actividades
+      %p.text-center Descubre las actividades que tenemos preparadas para ti en cada municipio:
+      .text-center
+        .modal-inline
+          %label.modal-js{:for => "guadalupe"}
+            .modal-trigger
+              .button Guadalupe
+          %input#guadalupe.modal-state{:type => "checkbox"}
+          .modal-fade-screen
+            .modal-inner
+              .modal-close{:for => "guadalupe"}
+              .image-container-border
+                =image_tag 'eventos/paseo-metropolitano-actividades-guadalupe.png'
+        .modal-inline
+          %label.modal-js{:for => "monterrey"}
+            .modal-trigger
+              .button Monterrey
+          %input#monterrey.modal-state{:type => "checkbox"}
+          .modal-fade-screen
+            .modal-inner
+              .modal-close{:for => "monterrey"}
+              .image-container-border
+                =image_tag 'eventos/paseo-metropolitano-actividades-monterrey.png'
+        .modal-inline
+          %label.modal-js{:for => "san-pedro"}
+            .modal-trigger
+              .button San Pedro
+          %input#san-pedro.modal-state{:type => "checkbox"}
+          .modal-fade-screen
+            .modal-inner
+              .modal-close{:for => "san-pedro"}
+              .image-container-border
+                =image_tag 'eventos/paseo-metropolitano-actividades-san-pedro.png'
+        .modal-inline
+          %label.modal-js{:for => "sta-catarina"}
+            .modal-trigger
+              .button Santa Catarina
+          %input#sta-catarina.modal-state{:type => "checkbox"}
+          .modal-fade-screen
+            .modal-inner
+              .modal-close{:for => "sta-catarina"}
+              .image-container-border
+                =image_tag 'eventos/paseo-metropolitano-actividades-sta-catarina.png'
 
       %hr
 

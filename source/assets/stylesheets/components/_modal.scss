@@ -142,6 +142,13 @@
         padding:15px;
       }
     }
+    .image-container-border{
+      @extend .image-container;
+      img{
+        border:1px solid $light-gray;
+        padding: 0!important;
+      }
+    }
 
     @include media($medium-screen) {
       max-height: 100%;
@@ -210,4 +217,9 @@
 
 .modal-open {
   overflow: hidden;
+}
+.modal-inline{
+  @extend .modal;
+  display: inline-block;
+  @extend .m-t-xl;
 }
