@@ -50,7 +50,7 @@ var Evaluate = React.createClass({
               <a  href="../">&larr; Vuelve a responder la encuesta</a>
             </header>
             <Bar
-              logo={ 'assets/images/ejes/' + this.state.logo }
+              logo={ '/assets/images/ejes/' + this.state.logo }
               color={ this.state.color }
               tema={ this.state.tema }
               disponible={ this.state.disponible }
