@@ -8,8 +8,10 @@ layout: event
     =link_to '¿Qué es?', '#que-es', class: 'scroll-on-page-link'
     =link_to 'Ruta', '#ruta', class: 'scroll-on-page-link'
     =link_to 'Recorridos', '#paseos', class: 'scroll-on-page-link'
+    =link_to 'Actividades', '#actividades', class: 'scroll-on-page-link'
     =link_to 'Staff', '#staff', class: 'scroll-on-page-link'
     =link_to 'Normas', '#normas', class: 'scroll-on-page-link'
+    =link_to 'Dudas', '#dudas', class: 'scroll-on-page-link'
 
 .event-page
   %section.banner-event
@@ -123,7 +125,7 @@ layout: event
                 .image-container
                   =image_tag 'eventos/paseo-metropolitano-longboards.png'
       %hr
-      %h3.text-center Actividades
+      %h3#actividades.anchor.text-center Actividades
       %p.text-center Descubre las actividades que tenemos preparadas para ti en cada municipio:
       .text-center
         .modal-inline
@@ -217,3 +219,12 @@ layout: event
         %li En el caso de la música, esta deberá de ser apropiada para un evento familiar sin mensajes ofensivos o violentos.
         %li Toda la publicidad y participación dentro del evento tendrá que ser coordinada por el municipio correspondiente.
         %li Queda estrictamente prohibido la repartición de folletos, panfletos, trípticos o material de papel.
+      %hr
+
+      .text-center.p-xl
+        %h3#dudas.anchor Si tienes dudas o preguntas sobre el #PaseoMetropolitano<br> contáctanos a través de nuestras redes sociales:
+        %p
+          =link_to 'Facebook.com/comovamosnl',  "http://www.facebook.com/comovamosnl", target: '_blanc' 
+          %br
+          =link_to '@comovamosnl', "http://www.twitter.com/@comovamosnl", target: '_blanc'
+
